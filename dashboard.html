@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Virtual Classroom Portal | Golden Path Tutors</title>
-  <meta name="description" content="Golden Path Tutors student portal featuring interactive virtual classroom, digital whiteboard, lesson schedules, and assignment tracking.">
-  
+  <meta name="description"
+    content="Golden Path Tutors student portal featuring interactive virtual classroom, digital whiteboard, lesson schedules, and assignment tracking.">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/src/css/styles.css">
 </head>
+
 <body style="background: #F1F5F9;">
 
   <!-- Header Navigation -->
@@ -26,7 +29,8 @@
         <span id="portal-user-badge" style="font-weight: 700; color: var(--color-primary); font-size: 0.95rem;">
           <i class="fa-solid fa-user-graduate" style="color: var(--color-gold);"></i> Loading Student...
         </span>
-        <button id="portal-logout-btn" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.85rem; border-color: #EF4444; color: #EF4444;">
+        <button id="portal-logout-btn" class="btn btn-outline"
+          style="padding: 0.4rem 1rem; font-size: 0.85rem; border-color: #EF4444; color: #EF4444;">
           <i class="fa-solid fa-right-from-bracket"></i> Logout
         </button>
       </div>
@@ -37,19 +41,23 @@
   <main class="portal-container">
     <div class="container">
       <div class="dashboard-grid">
-        
+
         <!-- Sidebar Profile & Nav -->
         <aside>
           <div class="sidebar-card">
             <div class="user-profile-summary">
               <div id="portal-avatar" class="user-avatar-large">GP</div>
               <h3 id="portal-fullname" style="font-size: 1.2rem; color: var(--color-primary);">Student Name</h3>
-              <p id="portal-username" style="color: var(--color-gold-hover); font-weight: 700; font-size: 0.88rem;">@username</p>
-              <p id="portal-email" style="font-size: 0.82rem; color: var(--color-text-muted); margin-top: 0.2rem;">email@example.com</p>
-              
-              <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #CBD5E1; text-align: left; font-size: 0.82rem; color: var(--color-text-muted);">
+              <p id="portal-username" style="color: var(--color-gold-hover); font-weight: 700; font-size: 0.88rem;">
+                @username</p>
+              <p id="portal-email" style="font-size: 0.82rem; color: var(--color-text-muted); margin-top: 0.2rem;">
+                email@example.com</p>
+
+              <div
+                style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #CBD5E1; text-align: left; font-size: 0.82rem; color: var(--color-text-muted);">
                 <p><strong>Stage:</strong> <span id="portal-grade">Secondary</span></p>
-                <p><strong>Mode:</strong> <span id="portal-mode" style="color: var(--color-accent-blue); font-weight: 700;">Online Virtual</span></p>
+                <p><strong>Mode:</strong> <span id="portal-mode"
+                    style="color: var(--color-accent-blue); font-weight: 700;">Online Virtual</span></p>
               </div>
             </div>
 
@@ -73,53 +81,72 @@
 
         <!-- Main Workspace Area -->
         <section>
-          
+
           <!-- TAB 1: VIRTUAL CLASSROOM STUDIO -->
           <div id="tab-classroom" class="portal-tab-content">
-            
-            <div style="background: var(--color-primary-dark); color: var(--color-white); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border: 2px solid var(--color-gold);">
+
+            <div
+              style="background: var(--color-primary-dark); color: var(--color-white); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border: 2px solid var(--color-gold);">
               <div>
-                <span class="slide-badge" style="background: rgba(16, 185, 129, 0.2); border-color: #10B981; color: #34D399; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-dot" style="color: #10B981;"></i> Session Live Now</span>
-                <h2 style="color: var(--color-white); font-size: 1.6rem;">Physics & Calculus - Interactive Virtual Room</h2>
+                <span class="slide-badge"
+                  style="background: rgba(16, 185, 129, 0.2); border-color: #10B981; color: #34D399; margin-bottom: 0.5rem;"><i
+                    class="fa-solid fa-circle-dot" style="color: #10B981;"></i> Session Live Now</span>
+                <h2 style="color: var(--color-white); font-size: 1.6rem;">Physics & Calculus - Interactive Virtual Room
+                </h2>
                 <p style="color: #94A3B8; font-size: 0.9rem;">Instructor: Dr. Sarah Johnson | Room ID: GP-884-ONLINE</p>
               </div>
 
               <div style="display: flex; gap: 0.5rem;">
-                <button class="btn btn-primary" id="btn-toggle-mic" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-microphone"></i> Mic On</button>
-                <button class="btn btn-outline-gold" id="btn-toggle-cam" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-video"></i> Camera On</button>
+                <button class="btn btn-primary" id="btn-toggle-mic" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i
+                    class="fa-solid fa-microphone"></i> Mic On</button>
+                <button class="btn btn-outline-gold" id="btn-toggle-cam"
+                  style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-video"></i> Camera On</button>
               </div>
             </div>
 
             <!-- Virtual Video & Chat Layout -->
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-              
+
               <!-- Video Feed Simulator -->
-              <div style="position: relative; background: #000; border-radius: 12px; height: 260px; overflow: hidden; box-shadow: var(--shadow-md);">
-                <img src="/images/slide2.png" alt="Live Tutor Feed" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
-                
-                <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: #FFF; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
+              <div
+                style="position: relative; background: #000; border-radius: 12px; height: 260px; overflow: hidden; box-shadow: var(--shadow-md);">
+                <img src="/images/slide2.png" alt="Live Tutor Feed"
+                  style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+
+                <div
+                  style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: #FFF; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
                   <i class="fa-solid fa-user-tie" style="color: var(--color-gold);"></i> Dr. Sarah Johnson (Tutor)
                 </div>
 
-                <div style="position: absolute; bottom: 1rem; right: 1rem; width: 100px; height: 70px; background: #1E293B; border: 2px solid var(--color-gold); border-radius: 8px; overflow: hidden;">
-                  <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #FFF; font-size: 0.75rem; font-weight: 700;">
+                <div
+                  style="position: absolute; bottom: 1rem; right: 1rem; width: 100px; height: 70px; background: #1E293B; border: 2px solid var(--color-gold); border-radius: 8px; overflow: hidden;">
+                  <div
+                    style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #FFF; font-size: 0.75rem; font-weight: 700;">
                     You (Student)
                   </div>
                 </div>
               </div>
 
               <!-- Live Chat Box Simulator -->
-              <div style="background: var(--color-white); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; height: 260px; box-shadow: var(--shadow-sm);">
-                <h4 style="font-size: 1rem; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.5rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-comments" style="color: var(--color-gold);"></i> Session Chat</h4>
-                
-                <div id="chat-messages-box" style="flex: 1; overflow-y: auto; font-size: 0.85rem; margin-bottom: 0.75rem;">
-                  <div style="margin-bottom: 0.5rem;"><strong style="color: var(--color-gold-hover);">Dr. Sarah:</strong> Welcome to class! Ready to solve problem #4?</div>
-                  <div style="margin-bottom: 0.5rem;"><strong style="color: var(--color-accent-blue);">System:</strong> Interactive whiteboard enabled.</div>
+              <div
+                style="background: var(--color-white); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; height: 260px; box-shadow: var(--shadow-sm);">
+                <h4
+                  style="font-size: 1rem; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
+                  <i class="fa-solid fa-comments" style="color: var(--color-gold);"></i> Session Chat</h4>
+
+                <div id="chat-messages-box"
+                  style="flex: 1; overflow-y: auto; font-size: 0.85rem; margin-bottom: 0.75rem;">
+                  <div style="margin-bottom: 0.5rem;"><strong style="color: var(--color-gold-hover);">Dr.
+                      Sarah:</strong> Welcome to class! Ready to solve problem #4?</div>
+                  <div style="margin-bottom: 0.5rem;"><strong style="color: var(--color-accent-blue);">System:</strong>
+                    Interactive whiteboard enabled.</div>
                 </div>
 
                 <div style="display: flex; gap: 0.4rem;">
-                  <input type="text" id="chat-input" class="form-control" placeholder="Type a message..." style="font-size: 0.85rem; padding: 0.5rem; background: #FFF; color: #000;">
-                  <button id="send-chat-btn" class="btn btn-primary" style="padding: 0.5rem 0.8rem;"><i class="fa-solid fa-paper-plane"></i></button>
+                  <input type="text" id="chat-input" class="form-control" placeholder="Type a message..."
+                    style="font-size: 0.85rem; padding: 0.5rem; background: #FFF; color: #000;">
+                  <button id="send-chat-btn" class="btn btn-primary" style="padding: 0.5rem 0.8rem;"><i
+                      class="fa-solid fa-paper-plane"></i></button>
                 </div>
               </div>
 
@@ -129,17 +156,25 @@
             <div class="whiteboard-container">
               <div class="whiteboard-toolbar">
                 <div class="tool-group">
-                  <span style="font-weight: 700; font-size: 0.88rem; color: var(--color-gold); margin-right: 0.5rem;"><i class="fa-solid fa-pen-ruler"></i> Interactive Canvas Whiteboard:</span>
-                  <button class="wb-color-picker tool-btn active" data-color="#F5B014" style="background: #F5B014; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
-                  <button class="wb-color-picker tool-btn" data-color="#0A192F" style="background: #0A192F; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
-                  <button class="wb-color-picker tool-btn" data-color="#2563EB" style="background: #2563EB; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
-                  <button class="wb-color-picker tool-btn" data-color="#EF4444" style="background: #EF4444; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
-                  <button class="wb-color-picker tool-btn" data-color="#10B981" style="background: #10B981; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
+                  <span style="font-weight: 700; font-size: 0.88rem; color: var(--color-gold); margin-right: 0.5rem;"><i
+                      class="fa-solid fa-pen-ruler"></i> Interactive Canvas Whiteboard:</span>
+                  <button class="wb-color-picker tool-btn active" data-color="#F5B014"
+                    style="background: #F5B014; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
+                  <button class="wb-color-picker tool-btn" data-color="#0A192F"
+                    style="background: #0A192F; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
+                  <button class="wb-color-picker tool-btn" data-color="#2563EB"
+                    style="background: #2563EB; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
+                  <button class="wb-color-picker tool-btn" data-color="#EF4444"
+                    style="background: #EF4444; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
+                  <button class="wb-color-picker tool-btn" data-color="#10B981"
+                    style="background: #10B981; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
                 </div>
 
                 <div class="tool-group">
                   <button id="wb-clear-btn" class="tool-btn"><i class="fa-solid fa-trash"></i> Clear Board</button>
-                  <button id="wb-download-btn" class="tool-btn" style="background: var(--color-gold); color: var(--color-primary-dark); font-weight: 700;"><i class="fa-solid fa-download"></i> Save Notes PNG</button>
+                  <button id="wb-download-btn" class="tool-btn"
+                    style="background: var(--color-gold); color: var(--color-primary-dark); font-weight: 700;"><i
+                      class="fa-solid fa-download"></i> Save Notes PNG</button>
                 </div>
               </div>
               <canvas id="wb-canvas"></canvas>
@@ -149,27 +184,39 @@
 
           <!-- TAB 2: SCHEDULE -->
           <div id="tab-schedule" class="portal-tab-content" style="display: none;">
-            <div style="background: var(--color-white); padding: 2rem; border-radius: 14px; box-shadow: var(--shadow-sm);">
-              <h2 style="font-size: 1.6rem; color: var(--color-primary); margin-bottom: 1.5rem;"><i class="fa-solid fa-calendar-days" style="color: var(--color-gold);"></i> My Tutoring Schedule</h2>
+            <div
+              style="background: var(--color-white); padding: 2rem; border-radius: 14px; box-shadow: var(--shadow-sm);">
+              <h2 style="font-size: 1.6rem; color: var(--color-primary); margin-bottom: 1.5rem;"><i
+                  class="fa-solid fa-calendar-days" style="color: var(--color-gold);"></i> My Tutoring Schedule</h2>
 
               <div style="display: flex; flex-direction: column; gap: 1rem;">
-                
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; background: var(--color-bg-light); border-left: 5px solid var(--color-gold); border-radius: 10px; flex-wrap: wrap; gap: 1rem;">
+
+                <div
+                  style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; background: var(--color-bg-light); border-left: 5px solid var(--color-gold); border-radius: 10px; flex-wrap: wrap; gap: 1rem;">
                   <div>
-                    <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: var(--color-gold-light); padding: 0.2rem 0.6rem; border-radius: 10px;">TODAY @ 4:00 PM</span>
+                    <span
+                      style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: var(--color-gold-light); padding: 0.2rem 0.6rem; border-radius: 10px;">TODAY
+                      @ 4:00 PM</span>
                     <h3 style="font-size: 1.2rem; margin-top: 0.4rem;">Physics & Calculus Live Session</h3>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted);">Delivery: Online Virtual Classroom | Tutor: Dr. Sarah Johnson</p>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted);">Delivery: Online Virtual Classroom |
+                      Tutor: Dr. Sarah Johnson</p>
                   </div>
-                  <button class="btn btn-primary" onclick="document.querySelector('[data-tab=classroom]').click();"><i class="fa-solid fa-door-open"></i> Join Classroom</button>
+                  <button class="btn btn-primary" onclick="document.querySelector('[data-tab=classroom]').click();"><i
+                      class="fa-solid fa-door-open"></i> Join Classroom</button>
                 </div>
 
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; background: var(--color-bg-light); border-left: 5px solid var(--color-accent-blue); border-radius: 10px; flex-wrap: wrap; gap: 1rem;">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; background: var(--color-bg-light); border-left: 5px solid var(--color-accent-blue); border-radius: 10px; flex-wrap: wrap; gap: 1rem;">
                   <div>
-                    <span style="font-size: 0.8rem; font-weight: 800; color: #1E40AF; background: #DBEAFE; padding: 0.2rem 0.6rem; border-radius: 10px;">THURSDAY @ 5:30 PM</span>
+                    <span
+                      style="font-size: 0.8rem; font-weight: 800; color: #1E40AF; background: #DBEAFE; padding: 0.2rem 0.6rem; border-radius: 10px;">THURSDAY
+                      @ 5:30 PM</span>
                     <h3 style="font-size: 1.2rem; margin-top: 0.4rem;">In-Home English Essay Writing Visit</h3>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted);">Delivery: In-Person Home Visit | Tutor: Emmanuel Okafor</p>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted);">Delivery: In-Person Home Visit |
+                      Tutor: Emmanuel Okafor</p>
                   </div>
-                  <span style="font-weight: 700; color: var(--color-primary); font-size: 0.9rem;"><i class="fa-solid fa-house-user"></i> Tutor Confirmed</span>
+                  <span style="font-weight: 700; color: var(--color-primary); font-size: 0.9rem;"><i
+                      class="fa-solid fa-house-user"></i> Tutor Confirmed</span>
                 </div>
 
               </div>
@@ -178,22 +225,30 @@
 
           <!-- TAB 3: RESOURCES -->
           <div id="tab-resources" class="portal-tab-content" style="display: none;">
-            <div style="background: var(--color-white); padding: 2rem; border-radius: 14px; box-shadow: var(--shadow-sm);">
-              <h2 style="font-size: 1.6rem; color: var(--color-primary); margin-bottom: 1.5rem;"><i class="fa-solid fa-folder-open" style="color: var(--color-gold);"></i> Study Materials & Homework</h2>
+            <div
+              style="background: var(--color-white); padding: 2rem; border-radius: 14px; box-shadow: var(--shadow-sm);">
+              <h2 style="font-size: 1.6rem; color: var(--color-primary); margin-bottom: 1.5rem;"><i
+                  class="fa-solid fa-folder-open" style="color: var(--color-gold);"></i> Study Materials & Homework</h2>
 
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
                 <div style="border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 10px;">
                   <i class="fa-solid fa-file-pdf" style="font-size: 2rem; color: #EF4444; margin-bottom: 0.5rem;"></i>
                   <h4 style="font-size: 1.05rem;">Calculus Problem Set #3.pdf</h4>
-                  <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Uploaded by Dr. Sarah | 1.4 MB</p>
-                  <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;" onclick="alert('Downloading Calculus Problem Set #3.pdf');"><i class="fa-solid fa-download"></i> Download PDF</button>
+                  <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Uploaded by Dr.
+                    Sarah | 1.4 MB</p>
+                  <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;"
+                    onclick="alert('Downloading Calculus Problem Set #3.pdf');"><i class="fa-solid fa-download"></i>
+                    Download PDF</button>
                 </div>
 
                 <div style="border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 10px;">
                   <i class="fa-solid fa-file-word" style="font-size: 2rem; color: #2563EB; margin-bottom: 0.5rem;"></i>
                   <h4 style="font-size: 1.05rem;">IGCSE Past Papers Pack.docx</h4>
-                  <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Uploaded by Golden Path | 3.2 MB</p>
-                  <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;" onclick="alert('Downloading IGCSE Past Papers Pack.docx');"><i class="fa-solid fa-download"></i> Download Pack</button>
+                  <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Uploaded by
+                    Golden Path | 3.2 MB</p>
+                  <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;"
+                    onclick="alert('Downloading IGCSE Past Papers Pack.docx');"><i class="fa-solid fa-download"></i>
+                    Download Pack</button>
                 </div>
               </div>
             </div>
@@ -201,10 +256,13 @@
 
           <!-- TAB 4: MESSAGES -->
           <div id="tab-tutors" class="portal-tab-content" style="display: none;">
-            <div style="background: var(--color-white); padding: 2rem; border-radius: 14px; box-shadow: var(--shadow-sm);">
-              <h2 style="font-size: 1.6rem; color: var(--color-primary); margin-bottom: 1rem;"><i class="fa-solid fa-comments" style="color: var(--color-gold);"></i> Tutor Messaging Center</h2>
-              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Send direct messages or homework queries to your assigned home or online tutors.</p>
-              
+            <div
+              style="background: var(--color-white); padding: 2rem; border-radius: 14px; box-shadow: var(--shadow-sm);">
+              <h2 style="font-size: 1.6rem; color: var(--color-primary); margin-bottom: 1rem;"><i
+                  class="fa-solid fa-comments" style="color: var(--color-gold);"></i> Tutor Messaging Center</h2>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Send direct messages
+                or homework queries to your assigned home or online tutors.</p>
+
               <div class="form-group">
                 <label style="color: var(--color-primary); font-weight: 700;">Select Tutor:</label>
                 <select class="form-control" style="background: #FFF; color: #000;">
@@ -215,10 +273,13 @@
 
               <div class="form-group">
                 <label style="color: var(--color-primary); font-weight: 700;">Your Message:</label>
-                <textarea class="form-control" rows="4" placeholder="Write your question or request homework feedback..." style="background: #FFF; color: #000;"></textarea>
+                <textarea class="form-control" rows="4"
+                  placeholder="Write your question or request homework feedback..."
+                  style="background: #FFF; color: #000;"></textarea>
               </div>
 
-              <button class="btn btn-primary" onclick="alert('Message sent to your tutor!');"><i class="fa-solid fa-paper-plane"></i> Send Direct Message</button>
+              <button class="btn btn-primary" onclick="alert('Message sent to your tutor!');"><i
+                  class="fa-solid fa-paper-plane"></i> Send Direct Message</button>
             </div>
           </div>
 
@@ -305,4 +366,5 @@
   </script>
   <script type="module" src="/src/js/main.js"></script>
 </body>
+
 </html>
