@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90" width="120" height="90">
+  <defs>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#F5B014" />
+    </linearGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2443" />
+      <stop offset="100%" stop-color="#06101E" />
+    </linearGradient>
+    <linearGradient id="pageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- SUN RAYS -->
+  <g id="sun-rays" fill="none" stroke="#F5B014" stroke-width="3.5" stroke-linecap="round">
+    <path d="M 60,14 L 60,4" />
+    <path d="M 44,20 L 36,11" />
+    <path d="M 76,20 L 84,11" />
+    <path d="M 32,36 L 22,32" />
+    <path d="M 88,36 L 98,32" />
+  </g>
+
+  <!-- SUN DISK -->
+  <circle cx="60" cy="38" r="16" fill="url(#sunGrad)" stroke="#D49E00" stroke-width="1" />
+
+  <!-- OPEN BOOK -->
+  <path d="M 60,74 C 42,56 20,54 6,60 C 4,61 3,64 3,66 C 16,84 44,76 60,82 C 76,76 104,84 117,66 C 117,64 116,61 114,60 C 100,54 78,56 60,74 Z" fill="url(#bookGrad)" stroke="#06101E" stroke-width="2" />
+  
+  <!-- BOOK PAGES -->
+  <path d="M 60,71 C 44,57 24,56 10,61 C 22,74 46,71 60,76 C 74,71 98,74 110,61 C 96,56 76,57 60,71 Z" fill="url(#pageGrad)" />
+  <path d="M 60,73 C 45,61 26,60 12,64 M 60,73 C 75,61 94,60 108,64" fill="none" stroke="#0A192F" stroke-width="2" stroke-linecap="round" />
+</svg>

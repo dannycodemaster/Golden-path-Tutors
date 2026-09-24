@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140" width="450" height="140">
+  <defs>
+    <!-- Sun Gold Gradients -->
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#F5B014" />
+    </linearGradient>
+    
+    <!-- Navy Book Gradients -->
+    <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2443" />
+      <stop offset="100%" stop-color="#06101E" />
+    </linearGradient>
+
+    <!-- Page Highlight -->
+    <linearGradient id="pageHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.5" />
+    </linearGradient>
+  </defs>
+
+  <!-- Group: Logo Symbol Mark (Sun + Open Book) -->
+  <g id="logo-mark" transform="translate(15, 10)">
+    
+    <!-- SUN RAYS -->
+    <g id="sun-rays" fill="url(#sunGradient)" stroke="#D49E00" stroke-width="1.5" stroke-linecap="round">
+      <!-- Top Center Ray -->
+      <path d="M 60,12 L 60,2" />
+      <!-- Top Left Ray -->
+      <path d="M 46,18 L 39,10" />
+      <!-- Top Right Ray -->
+      <path d="M 74,18 L 81,10" />
+      <!-- Far Left Ray -->
+      <path d="M 36,32 L 27,29" />
+      <!-- Far Right Ray -->
+      <path d="M 84,32 L 93,29" />
+    </g>
+
+    <!-- SUN DISK -->
+    <path d="M 38,40 A 22,22 0 0,1 82,40 C 82,40 70,46 60,46 C 50,46 38,40 38,40 Z" fill="url(#sunGradient)" />
+    <circle cx="60" cy="35" r="14" fill="url(#sunGradient)" />
+
+    <!-- OPEN BOOK - LEFT & RIGHT WINGS -->
+    <!-- Outer Navy Cover -->
+    <path d="M 60,68 C 42,52 20,50 6,56 C 4,57 3,60 3,62 C 16,80 44,72 60,78 C 76,72 104,80 117,62 C 117,60 116,57 114,56 C 100,50 78,52 60,68 Z" fill="url(#bookGradient)" stroke="#06101E" stroke-width="2" />
+    
+    <!-- Inner Book Pages Curve (White/Light Blue Glow) -->
+    <path d="M 60,65 C 44,53 24,52 10,57 C 22,70 46,67 60,72 C 74,67 98,70 110,57 C 96,52 76,53 60,65 Z" fill="url(#pageHighlight)" />
+    <path d="M 60,67 C 45,55 26,54 12,58 M 60,67 C 75,55 94,54 108,58" fill="none" stroke="#0A192F" stroke-width="1.8" stroke-linecap="round" />
+  </g>
+
+  <!-- BRAND TYPOGRAPHY -->
+  <g id="logo-text" transform="translate(145, 0)">
+    <text x="0" y="62" font-family="'Outfit', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="34" font-weight="800" fill="#0A192F" letter-spacing="-0.5">Golden Path</text>
+    <text x="2" y="90" font-family="'Outfit', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#F5B014" letter-spacing="7">TUTORS</text>
+    <text x="2" y="112" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#475569" letter-spacing="0.5">Home &amp; Online Tutoring</text>
+  </g>
+</svg>
