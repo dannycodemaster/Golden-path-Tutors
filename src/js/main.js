@@ -90,15 +90,12 @@ function setupNavHeader() {
   } else {
     if (authNavContainer) {
       authNavContainer.innerHTML = `
-        <a href="login.html"><i class="fa-solid fa-lock"></i> Student Portal Login</a>
-        <span style="color: #475569;">|</span>
-        <a href="register.html" style="color: var(--color-gold); font-weight: 700;"><i class="fa-solid fa-user-plus"></i> Register Student</a>
+        <a href="dashboard.html" style="color: var(--color-gold); font-weight: 700;"><i class="fa-solid fa-chalkboard-user"></i> Student Portal</a>
       `;
     }
     if (mainNavActions) {
       mainNavActions.innerHTML = `
-        <a href="login.html" class="btn btn-outline"><i class="fa-solid fa-lock"></i> Portal Login</a>
-        <a href="register.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Register Now</a>
+        <a href="dashboard.html" class="btn btn-primary"><i class="fa-solid fa-chalkboard-user"></i> Virtual Classroom</a>
       `;
     }
   }
