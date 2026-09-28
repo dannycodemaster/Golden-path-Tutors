@@ -97,7 +97,7 @@ function setupNavHeader() {
     }
     if (mainNavActions) {
       mainNavActions.innerHTML = `
-        <a href="login.html" class="btn btn-outline"><i class="fa-solid fa-lock"></i> Portal Login</a>
+        <a href="login.html" class="btn btn-navy"><i class="fa-solid fa-lock"></i> Portal Login</a>
         <a href="register.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Register Student</a>
       `;
     }
