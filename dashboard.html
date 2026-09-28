@@ -82,71 +82,104 @@
         <!-- Main Workspace Area -->
         <section>
 
-          <!-- TAB 1: VIRTUAL CLASSROOM STUDIO -->
+          <!-- TAB 1: GOOGLE CLASSROOM & LIVE STUDIO -->
           <div id="tab-classroom" class="portal-tab-content">
 
+            <!-- Google Classroom Integration Banner -->
             <div
-              style="background: var(--color-primary-dark); color: var(--color-white); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border: 2px solid var(--color-gold);">
+              style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: var(--color-white); border-radius: 14px; padding: 1.75rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem; border: 2px solid var(--color-gold); box-shadow: var(--shadow-md);">
               <div>
-                <span class="slide-badge"
-                  style="background: rgba(16, 185, 129, 0.2); border-color: #10B981; color: #34D399; margin-bottom: 0.5rem;"><i
-                    class="fa-solid fa-circle-dot" style="color: #10B981;"></i> Session Live Now</span>
-                <h2 style="color: var(--color-white); font-size: 1.6rem;">Physics & Calculus - Interactive Virtual Room
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem;">
+                  <span class="slide-badge"
+                    style="background: rgba(16, 185, 129, 0.2); border-color: #10B981; color: #34D399; margin: 0;"><i
+                      class="fa-solid fa-circle-dot" style="color: #10B981;"></i> Google Classroom Connected</span>
+                  <span id="classroom-authorized-badge"
+                    style="background: rgba(245, 176, 20, 0.2); color: var(--color-gold); padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.78rem; font-weight: 700;">
+                    <i class="fa-solid fa-shield-check"></i> Authorized Student
+                  </span>
+                </div>
+                <h2 style="color: var(--color-white); font-size: 1.65rem; margin-bottom: 0.3rem;">
+                  <i class="fa-custom fa-brands fa-google-drive" style="color: #4285F4;"></i> Google Classroom Virtual Hub
                 </h2>
-                <p style="color: #94A3B8; font-size: 0.9rem;">Instructor: Dr. Sarah Johnson | Room ID: GP-884-ONLINE</p>
+                <p style="color: #94A3B8; font-size: 0.9rem;">
+                  Access granted for registered student email: <strong id="gclassroom-user-email" style="color: var(--color-gold);">loading...</strong>
+                </p>
               </div>
 
-              <div style="display: flex; gap: 0.5rem;">
-                <button class="btn btn-primary" id="btn-toggle-mic" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i
-                    class="fa-solid fa-microphone"></i> Mic On</button>
-                <button class="btn btn-outline-gold" id="btn-toggle-cam"
-                  style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-video"></i> Camera On</button>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="https://classroom.google.com" target="_blank" class="btn btn-primary"
+                  style="padding: 0.6rem 1.2rem; font-size: 0.9rem; background: #0F9D58; border-color: #0F9D58;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Google Classroom
+                </a>
+                <a href="https://meet.google.com/new" target="_blank" class="btn btn-outline-gold"
+                  style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                  <i class="fa-solid fa-video" style="color: #4285F4;"></i> Join Google Meet Live
+                </a>
               </div>
             </div>
 
-            <!-- Virtual Video & Chat Layout -->
+            <!-- Google Classroom Class Cards & Live Feed Grid -->
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
 
-              <!-- Video Feed Simulator -->
+              <!-- Google Classroom Stream Preview -->
               <div
-                style="position: relative; background: #000; border-radius: 12px; height: 260px; overflow: hidden; box-shadow: var(--shadow-md);">
-                <img src="/images/slide2.png" alt="Live Tutor Feed"
-                  style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
-
-                <div
-                  style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: #FFF; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
-                  <i class="fa-solid fa-user-tie" style="color: var(--color-gold);"></i> Dr. Sarah Johnson (Tutor)
+                style="background: var(--color-white); border-radius: 14px; padding: 1.5rem; box-shadow: var(--shadow-sm); border: 1px solid #E2E8F0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 2px solid #F1F5F9; padding-bottom: 0.75rem;">
+                  <h3 style="font-size: 1.2rem; color: var(--color-primary); display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-chalkboard-user" style="color: #4285F4;"></i> Active Google Classrooms
+                  </h3>
+                  <span style="font-size: 0.8rem; color: var(--color-text-muted);">Synced with registered email</span>
                 </div>
 
-                <div
-                  style="position: absolute; bottom: 1rem; right: 1rem; width: 100px; height: 70px; background: #1E293B; border: 2px solid var(--color-gold); border-radius: 8px; overflow: hidden;">
-                  <div
-                    style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #FFF; font-size: 0.75rem; font-weight: 700;">
-                    You (Student)
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                  
+                  <!-- Class Card 1 -->
+                  <div style="background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%); color: #FFF; border-radius: 10px; padding: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                      <span style="font-size: 0.75rem; background: rgba(255,255,255,0.2); padding: 0.2rem 0.6rem; border-radius: 8px; font-weight: 700;">CLASS CODE: GP-MATH-10</span>
+                      <h4 style="font-size: 1.2rem; color: #FFF; margin-top: 0.4rem;">Mathematics & Calculus Studio</h4>
+                      <p style="font-size: 0.85rem; color: #DBEAFE;">Instructor: Dr. Sarah Johnson | 4 Upcoming Assignments</p>
+                    </div>
+                    <a href="https://classroom.google.com" target="_blank" class="btn btn-outline-gold" style="font-size: 0.85rem; padding: 0.4rem 0.9rem; background: rgba(0,0,0,0.3);">
+                      Enter Class Stream <i class="fa-solid fa-chevron-right"></i>
+                    </a>
                   </div>
+
+                  <!-- Class Card 2 -->
+                  <div style="background: linear-gradient(135deg, #065F46 0%, #10B981 100%); color: #FFF; border-radius: 10px; padding: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                      <span style="font-size: 0.75rem; background: rgba(255,255,255,0.2); padding: 0.2rem 0.6rem; border-radius: 8px; font-weight: 700;">CLASS CODE: GP-PHYS-08</span>
+                      <h4 style="font-size: 1.2rem; color: #FFF; margin-top: 0.4rem;">Physics & STEM Lab</h4>
+                      <p style="font-size: 0.85rem; color: #D1FAE5;">Instructor: Engr. David Bello | Next Live Session: Today 4:00 PM</p>
+                    </div>
+                    <a href="https://classroom.google.com" target="_blank" class="btn btn-outline-gold" style="font-size: 0.85rem; padding: 0.4rem 0.9rem; background: rgba(0,0,0,0.3);">
+                      Enter Class Stream <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+
                 </div>
               </div>
 
-              <!-- Live Chat Box Simulator -->
+              <!-- Registered Student Authorization Status Card -->
               <div
-                style="background: var(--color-white); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; height: 260px; box-shadow: var(--shadow-sm);">
-                <h4
-                  style="font-size: 1rem; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
-                  <i class="fa-solid fa-comments" style="color: var(--color-gold);"></i> Session Chat</h4>
-
-                <div id="chat-messages-box"
-                  style="flex: 1; overflow-y: auto; font-size: 0.85rem; margin-bottom: 0.75rem;">
-                  <div style="margin-bottom: 0.5rem;"><strong style="color: var(--color-gold-hover);">Dr.
-                      Sarah:</strong> Welcome to class! Ready to solve problem #4?</div>
-                  <div style="margin-bottom: 0.5rem;"><strong style="color: var(--color-accent-blue);">System:</strong>
-                    Interactive whiteboard enabled.</div>
+                style="background: var(--color-white); border-radius: 14px; padding: 1.25rem; box-shadow: var(--shadow-sm); border: 1px solid #E2E8F0; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <h4 style="font-size: 1rem; color: var(--color-primary); margin-bottom: 0.75rem; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.5rem;">
+                    <i class="fa-solid fa-user-shield" style="color: #0F9D58;"></i> Email Authorization
+                  </h4>
+                  <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+                    Only registered Golden Path student email addresses are granted access to live Google Meet video rooms and assignment turn-ins.
+                  </p>
+                  
+                  <div style="background: var(--color-bg-light); padding: 0.75rem; border-radius: 8px; font-size: 0.82rem; margin-bottom: 1rem;">
+                    <div style="margin-bottom: 0.3rem;"><strong>Registered Email:</strong></div>
+                    <div id="verified-email-display" style="color: var(--color-gold-hover); font-weight: 700; word-break: break-all;">student@example.com</div>
+                  </div>
                 </div>
 
-                <div style="display: flex; gap: 0.4rem;">
-                  <input type="text" id="chat-input" class="form-control" placeholder="Type a message..."
-                    style="font-size: 0.85rem; padding: 0.5rem; background: #FFF; color: #000;">
-                  <button id="send-chat-btn" class="btn btn-primary" style="padding: 0.5rem 0.8rem;"><i
-                      class="fa-solid fa-paper-plane"></i></button>
+                <div style="background: #ECFDF5; border: 1px solid #A7F3D0; padding: 0.75rem; border-radius: 8px; font-size: 0.8rem; color: #065F46; display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="fa-solid fa-circle-check" style="font-size: 1.1rem; color: #10B981;"></i>
+                  <span>Google Account Session Active</span>
                 </div>
               </div>
 
@@ -157,7 +190,7 @@
               <div class="whiteboard-toolbar">
                 <div class="tool-group">
                   <span style="font-weight: 700; font-size: 0.88rem; color: var(--color-gold); margin-right: 0.5rem;"><i
-                      class="fa-solid fa-pen-ruler"></i> Interactive Canvas Whiteboard:</span>
+                      class="fa-solid fa-pen-ruler"></i> Companion Interactive Whiteboard:</span>
                   <button class="wb-color-picker tool-btn active" data-color="#F5B014"
                     style="background: #F5B014; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #FFF; padding: 0;"></button>
                   <button class="wb-color-picker tool-btn" data-color="#0A192F"
@@ -307,6 +340,12 @@
       document.getElementById('portal-email').textContent = student.email;
       document.getElementById('portal-grade').textContent = student.gradeLevel || 'Secondary School';
       document.getElementById('portal-mode').textContent = student.learningMode || 'Online Virtual';
+
+      // Set Registered Email in Google Classroom Hub
+      const gEmailElem = document.getElementById('gclassroom-user-email');
+      if (gEmailElem) gEmailElem.textContent = student.email;
+      const verifiedEmailElem = document.getElementById('verified-email-display');
+      if (verifiedEmailElem) verifiedEmailElem.textContent = student.email;
 
       // Initials for Avatar
       const initials = student.fullName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
