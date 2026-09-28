@@ -8,7 +8,7 @@ const VALID_ACCESS_CODES_KEY = 'gpt_admin_access_codes_v1';
 export function initAuthStore() {
   if (!localStorage.getItem(VALID_ACCESS_CODES_KEY)) {
     // Valid Admin Registration Codes (Pre-generated for Admin distribution)
-    const initialCodes = ['GPT-2026-NIG', 'GPT-GOLD-884', 'GPT-STUDENT-99', 'GPT-VIP-777'];
+    const initialCodes = ['GPT.STUDENTS.2026', 'GPT-2026-NIG', 'GPT-GOLD-884', 'GPT-STUDENT-99', 'GPT-VIP-777'];
     localStorage.setItem(VALID_ACCESS_CODES_KEY, JSON.stringify(initialCodes));
   }
 
@@ -22,7 +22,7 @@ export function initAuthStore() {
         gradeLevel: 'Secondary School (Grade 10)',
         learningMode: 'Online & Home Hybrid',
         subjects: ['Mathematics', 'Physics'],
-        accessCodeUsed: 'GPT-2026-NIG',
+        accessCodeUsed: 'GPT.STUDENTS.2026',
         isBlocked: false,
         registeredAt: new Date().toISOString()
       },
@@ -34,7 +34,7 @@ export function initAuthStore() {
         gradeLevel: 'Primary School (Grade 5)',
         learningMode: 'Home Private Tutoring',
         subjects: ['English Language', 'Sciences'],
-        accessCodeUsed: 'GPT-GOLD-884',
+        accessCodeUsed: 'GPT.STUDENTS.2026',
         isBlocked: false,
         registeredAt: new Date().toISOString()
       }
@@ -49,7 +49,7 @@ export function getValidAccessCodes() {
   try {
     return JSON.parse(localStorage.getItem(VALID_ACCESS_CODES_KEY)) || [];
   } catch (e) {
-    return ['GPT-2026-NIG', 'GPT-GOLD-884'];
+    return ['GPT.STUDENTS.2026', 'GPT-2026-NIG', 'GPT-GOLD-884'];
   }
 }
 
