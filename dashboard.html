@@ -75,6 +75,9 @@
               <div class="portal-nav-item" data-tab="tutors">
                 <i class="fa-solid fa-comments" style="color: #8B5CF6;"></i> Tutor Messages
               </div>
+              <div class="portal-nav-item" data-tab="admin" style="background: var(--color-gold-cream); border: 1px dashed var(--color-gold); font-weight: 700;">
+                <i class="fa-solid fa-user-shield" style="color: var(--color-gold-hover);"></i> Admin Control Panel
+              </div>
             </nav>
           </div>
         </aside>
@@ -314,6 +317,78 @@
               <button class="btn btn-primary" onclick="alert('Message sent to your tutor!');"><i
                   class="fa-solid fa-paper-plane"></i> Send Direct Message</button>
             </div>
+          <!-- TAB 5: ADMIN CONTROL PANEL -->
+          <div id="tab-admin" class="portal-tab-content" style="display: none;">
+            
+            <div style="background: var(--color-white); padding: 2rem; border-radius: 14px; box-shadow: var(--shadow-sm); border: 2px solid var(--color-gold);">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 2px solid #F1F5F9; padding-bottom: 1rem;">
+                <div>
+                  <h2 style="font-size: 1.6rem; color: var(--color-primary); display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fa-solid fa-user-shield" style="color: var(--color-gold-hover);"></i> Academic Administrator Portal
+                  </h2>
+                  <p style="color: var(--color-text-muted); font-size: 0.9rem;">
+                    Generate student registration access codes & manage live class access permissions.
+                  </p>
+                </div>
+                <span style="background: var(--color-primary); color: var(--color-gold); font-weight: 800; padding: 0.4rem 0.9rem; border-radius: 20px; font-size: 0.85rem;">
+                  <i class="fa-solid fa-lock"></i> ADMIN SECURE SESSION
+                </span>
+              </div>
+
+              <!-- Admin Module 1: Generate Registration Access Code -->
+              <div style="background: var(--color-gold-cream); border: 1.5px dashed var(--color-gold); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="fa-solid fa-key" style="color: var(--color-gold-hover);"></i> Generate Unique Registration Code
+                </h3>
+                <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+                  Students must enter one of these unique admin codes before creating their account.
+                </p>
+
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                  <input type="text" id="admin-new-code-input" class="form-control" placeholder="e.g. GPT-2026-NIG"
+                    style="flex: 1; min-width: 220px; text-transform: uppercase; font-weight: 700; font-size: 0.95rem; background: #FFF; color: #000;">
+                  <button id="admin-generate-code-btn" class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i> Generate & Save Code
+                  </button>
+                </div>
+
+                <div>
+                  <strong style="font-size: 0.85rem; color: var(--color-primary);">Active Authorized Registration Codes:</strong>
+                  <div id="admin-active-codes-list" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                    <!-- Injected dynamically -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Admin Module 2: Block / Unblock Live Class Access -->
+              <div>
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <i class="fa-solid fa-user-slash" style="color: #EF4444;"></i> Student Live Class Access Management
+                </h3>
+                <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+                  Toggle student access. Blocking a student immediately revokes their ability to join live Google Meet classes or Google Classroom streams.
+                </p>
+
+                <div style="overflow-x: auto;">
+                  <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left;">
+                    <thead>
+                      <tr style="background: var(--color-bg-light); border-bottom: 2px solid #CBD5E1; color: var(--color-primary);">
+                        <th style="padding: 0.75rem;">Student Name</th>
+                        <th style="padding: 0.75rem;">Email / Username</th>
+                        <th style="padding: 0.75rem;">Access Code</th>
+                        <th style="padding: 0.75rem;">Live Class Status</th>
+                        <th style="padding: 0.75rem; text-align: right;">Admin Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="admin-students-table-body">
+                      <!-- Injected dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </section>
@@ -323,7 +398,7 @@
   </main>
 
   <script type="module">
-    import { requireAuth, logoutUser } from '/src/js/auth.js';
+    import { requireAuth, logoutUser, getValidAccessCodes, addAdminAccessCode, getRegisteredUsers, toggleBlockStudentStatus } from '/src/js/auth.js';
     import { showToast } from '/src/js/main.js';
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -351,6 +426,25 @@
       const initials = student.fullName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
       document.getElementById('portal-avatar').textContent = initials || 'GP';
 
+      // Live Class Access Block Guard
+      if (student.isBlocked) {
+        const liveTabContent = document.getElementById('tab-classroom');
+        if (liveTabContent) {
+          liveTabContent.innerHTML = `
+            <div style="background: #FEF2F2; border: 2px solid #EF4444; border-radius: 14px; padding: 3rem 2rem; text-align: center; color: #991B1B;">
+              <div style="font-size: 3.5rem; color: #DC2626; margin-bottom: 1rem;"><i class="fa-solid fa-user-lock"></i></div>
+              <h2 style="color: #991B1B; font-size: 1.8rem; margin-bottom: 0.5rem;">Live Class Access Suspended by Administrator</h2>
+              <p style="max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 0.95rem; color: #B91C1C;">
+                Your access to live Google Meet sessions and Google Classroom streams has been temporarily blocked by your Academic Administrator. Please contact Golden Path support to restore your access.
+              </p>
+              <a href="contact.html" class="btn btn-primary" style="background: #DC2626; border-color: #DC2626;">
+                <i class="fa-solid fa-headset"></i> Contact Academic Support
+              </a>
+            </div>
+          `;
+        }
+      }
+
       // Logout handler
       document.getElementById('portal-logout-btn')?.addEventListener('click', () => {
         logoutUser();
@@ -368,38 +462,77 @@
           btn.classList.add('active');
           const target = btn.getAttribute('data-tab');
           document.getElementById(`tab-${target}`).style.display = 'block';
+
+          if (target === 'admin') {
+            renderAdminPanel();
+          }
         });
       });
 
-      // Chat Simulator
-      const chatInput = document.getElementById('chat-input');
-      const chatSend = document.getElementById('send-chat-btn');
-      const chatBox = document.getElementById('chat-messages-box');
+      // Admin Panel Renderer
+      function renderAdminPanel() {
+        // 1. Render Access Codes
+        const codesListElem = document.getElementById('admin-active-codes-list');
+        if (codesListElem) {
+          const codes = getValidAccessCodes();
+          codesListElem.innerHTML = codes.map(c => `
+            <span style="background: var(--color-primary); color: var(--color-gold); padding: 0.3rem 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.9rem; font-weight: 700;">
+              <i class="fa-solid fa-key" style="font-size: 0.75rem;"></i> ${c}
+            </span>
+          `).join('');
+        }
 
-      function sendMessage() {
-        const text = chatInput.value.trim();
-        if (!text) return;
+        // 2. Render Student List with Block/Unblock actions
+        const tableBody = document.getElementById('admin-students-table-body');
+        if (tableBody) {
+          const users = getRegisteredUsers();
+          tableBody.innerHTML = users.map(u => `
+            <tr style="border-bottom: 1px solid #E2E8F0;">
+              <td style="padding: 0.75rem; font-weight: 700; color: var(--color-primary);">${u.fullName}</td>
+              <td style="padding: 0.75rem; color: var(--color-text-muted);">${u.email}<br><small style="color: var(--color-gold-hover);">@${u.username}</small></td>
+              <td style="padding: 0.75rem;"><span style="font-family: monospace; font-weight: 700; color: var(--color-primary);">${u.accessCodeUsed || 'N/A'}</span></td>
+              <td style="padding: 0.75rem;">
+                ${u.isBlocked 
+                  ? '<span style="background: #FEE2E2; color: #991B1B; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.78rem; font-weight: 800;"><i class="fa-solid fa-lock"></i> BLOCKED</span>'
+                  : '<span style="background: #D1FAE5; color: #065F46; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.78rem; font-weight: 800;"><i class="fa-solid fa-circle-check"></i> ACTIVE</span>'
+                }
+              </td>
+              <td style="padding: 0.75rem; text-align: right;">
+                <button class="admin-toggle-block-btn btn" data-username="${u.username}" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; background: ${u.isBlocked ? '#10B981' : '#EF4444'}; color: #FFF;">
+                  <i class="fa-solid ${u.isBlocked ? 'fa-user-check' : 'fa-user-slash'}"></i> ${u.isBlocked ? 'Unblock Student' : 'Block Access'}
+                </button>
+              </td>
+            </tr>
+          `).join('');
 
-        const userMsg = document.createElement('div');
-        userMsg.style.marginBottom = '0.5rem';
-        userMsg.innerHTML = `<strong style="color: var(--color-primary);">You:</strong> ${text}`;
-        chatBox.appendChild(userMsg);
-        chatInput.value = '';
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-        // Auto tutor reply after 1 sec
-        setTimeout(() => {
-          const tutorMsg = document.createElement('div');
-          tutorMsg.style.marginBottom = '0.5rem';
-          tutorMsg.innerHTML = `<strong style="color: var(--color-gold-hover);">Dr. Sarah:</strong> Great point! Let's write out that formula on the canvas board below.`;
-          chatBox.appendChild(tutorMsg);
-          chatBox.scrollTop = chatBox.scrollHeight;
-        }, 1000);
+          // Attach click listeners to block buttons
+          document.querySelectorAll('.admin-toggle-block-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              const uname = e.currentTarget.getAttribute('data-username');
+              const res = toggleBlockStudentStatus(uname);
+              showToast(res.message, res.isBlocked ? 'error' : 'success');
+              renderAdminPanel();
+            });
+          });
+        }
       }
 
-      chatSend?.addEventListener('click', sendMessage);
-      chatInput?.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') sendMessage();
+      // Add New Access Code Handler
+      document.getElementById('admin-generate-code-btn')?.addEventListener('click', () => {
+        const input = document.getElementById('admin-new-code-input');
+        const val = input.value.trim();
+        if (!val) {
+          showToast('Please type a code to generate.', 'error');
+          return;
+        }
+        const res = addAdminAccessCode(val);
+        if (res.success) {
+          showToast(res.message, 'success');
+          input.value = '';
+          renderAdminPanel();
+        } else {
+          showToast(res.message, 'error');
+        }
       });
     });
   </script>
