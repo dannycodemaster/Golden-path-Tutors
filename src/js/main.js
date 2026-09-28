@@ -90,12 +90,15 @@ function setupNavHeader() {
   } else {
     if (authNavContainer) {
       authNavContainer.innerHTML = `
-        <a href="dashboard.html" style="color: var(--color-gold); font-weight: 700;"><i class="fa-solid fa-chalkboard-user"></i> Student Portal</a>
+        <a href="login.html"><i class="fa-solid fa-lock"></i> Student Portal Login</a>
+        <span style="color: #475569;">|</span>
+        <a href="register.html" style="color: var(--color-gold); font-weight: 700;"><i class="fa-solid fa-user-plus"></i> Register Student</a>
       `;
     }
     if (mainNavActions) {
       mainNavActions.innerHTML = `
-        <a href="dashboard.html" class="btn btn-primary"><i class="fa-solid fa-chalkboard-user"></i> Virtual Classroom</a>
+        <a href="login.html" class="btn btn-outline"><i class="fa-solid fa-lock"></i> Portal Login</a>
+        <a href="register.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Register Student</a>
       `;
     }
   }
@@ -169,16 +172,10 @@ function setupAuthForms() {
       const username = document.getElementById('reg-username').value;
       const email = document.getElementById('reg-email').value;
       const password = document.getElementById('reg-password').value;
-      const confirmPassword = document.getElementById('reg-confirm-password').value;
       const gradeLevel = document.getElementById('reg-grade').value;
       const learningMode = document.getElementById('reg-mode').value;
 
       const checkedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(cb => cb.value);
-
-      if (password !== confirmPassword) {
-        showToast('Passwords do not match. Please retype password.', 'error');
-        return;
-      }
 
       const res = registerStudent({
         fullName,
