@@ -168,7 +168,6 @@ function setupAuthForms() {
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const accessCode = document.getElementById('reg-access-code')?.value;
       const fullName = document.getElementById('reg-fullname').value;
       const username = document.getElementById('reg-username').value;
       const email = document.getElementById('reg-email').value;
@@ -179,7 +178,6 @@ function setupAuthForms() {
       const checkedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(cb => cb.value);
 
       const res = registerStudent({
-        accessCode,
         fullName,
         username,
         email,
