@@ -40,20 +40,30 @@ function setupMobileMenu() {
   const navLinks = document.querySelector('.nav-links');
 
   if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener('click', () => {
-      if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-      } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '80px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = '#FFFFFF';
-        navLinks.style.padding = '1.5rem';
-        navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
-        navLinks.style.zIndex = '999';
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navLinks.classList.toggle('active');
+      const icon = toggleBtn.querySelector('i');
+      if (icon) {
+        icon.className = isActive ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      }
+    });
+
+    // Close menu when a link inside is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = toggleBtn.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      });
+    });
+
+    // Close menu if user clicks anywhere outside
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        const icon = toggleBtn.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
       }
     });
   }
