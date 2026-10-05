@@ -19,7 +19,7 @@
     <div class="container">
       <div class="top-bar-info">
         <span><i class="fa-solid fa-phone"></i> +234 810 020 0554 / +234 09074089626</span>
-        <span><i class="fa-solid fa-envelope"></i> goldenpathtutors@gmail.com</span>
+        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:danieldavid1200@gmail.com" style="color: inherit; text-decoration: none;">danieldavid1200@gmail.com</a></span>
       </div>
       <div class="top-bar-auth"></div>
     </div>
@@ -113,13 +113,10 @@
           </button>
         </div>
 
-        <!-- Form -->
-        <form id="gptContactForm" class="gpt-form" novalidate>
+        <!-- Form connected to Formspree delivering to danieldavid1200@gmail.com -->
+        <form id="gptContactForm" class="gpt-form" action="https://formspree.io/f/xoejqall" method="POST" novalidate>
 
-          <!-- Web3Forms access key -->
-          <input type="hidden" name="access_key" value="91125182-adab-4aa8-b681-00de3eb54080">
-          <input type="hidden" name="subject" value="New Tutoring Enquiry - Golden Path Tutors">
-          <input type="hidden" name="from_name" value="Golden Path Tutors Website">
+          <input type="hidden" name="_subject" value="New Tutoring Enquiry - Golden Path Tutors">
 
           <!-- Honeypot -->
           <div class="gpt-honeypot" aria-hidden="true">
@@ -544,21 +541,20 @@
         spinner.hidden = false;
 
         try {
-          const response = await fetch("https://api.web3forms.com/submit", {
+          const response = await fetch("https://formspree.io/f/xoejqall", {
             method: "POST",
             body: new FormData(form),
             headers: { "Accept": "application/json" }
           });
 
-          const result = await response.json();
-          if (!response.ok || result.success === false) throw new Error("Submission failed");
+          if (!response.ok) throw new Error("Submission failed");
 
           form.hidden = true;
           success.hidden = false;
           success.scrollIntoView({ behavior: "smooth", block: "center" });
 
         } catch (err) {
-          formAlert.textContent = "Something went wrong. Please try again or email us directly at goldenpathtutors@gmail.com";
+          formAlert.innerHTML = 'Something went wrong. Please try again or email us directly at <a href="mailto:danieldavid1200@gmail.com" style="color: inherit; font-weight: 700;">danieldavid1200@gmail.com</a>';
           formAlert.hidden = false;
           formAlert.scrollIntoView({ behavior: "smooth", block: "center" });
         } finally {
