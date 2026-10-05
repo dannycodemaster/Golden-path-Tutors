@@ -209,19 +209,45 @@
           <fieldset>
             <legend>What support are you looking for?</legend>
             <div class="gpt-field">
-              <label for="supportReason">Main reason for tutoring <span aria-hidden="true">*</span></label>
-              <select id="supportReason" name="supportReason" required aria-describedby="supportReasonError">
-                <option value="">Please select</option>
-                <option value="confidence">Building confidence</option>
-                <option value="catch-up">Catch-up support</option>
-                <option value="homework">Homework support</option>
-                <option value="exam">Exam preparation</option>
-                <option value="gcse">GCSE</option>
-                <option value="a-level">A-Level</option>
-                <option value="entrance">Entrance exams</option>
-                <option value="study-skills">Study skills</option>
-                <option value="other">Other</option>
-              </select>
+              <label>Main reason for tutoring <span aria-hidden="true">*</span></label>
+              <div class="gpt-checkbox-group" id="supportReasonGroup">
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="Building confidence">
+                  <span>Building confidence</span>
+                </label>
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="Catch-up support">
+                  <span>Catch-up support</span>
+                </label>
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="Homework support">
+                  <span>Homework support</span>
+                </label>
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="Exam preparation">
+                  <span>Exam preparation</span>
+                </label>
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="GCSE">
+                  <span>GCSE</span>
+                </label>
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="A-Level">
+                  <span>A-Level</span>
+                </label>
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="Entrance exams">
+                  <span>Entrance exams</span>
+                </label>
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="Study skills">
+                  <span>Study skills</span>
+                </label>
+                <label class="gpt-check-option">
+                  <input type="checkbox" name="supportReason" value="Other">
+                  <span>Other</span>
+                </label>
+              </div>
               <span class="gpt-error" id="supportReasonError"></span>
             </div>
             <div class="gpt-field">
@@ -372,6 +398,13 @@
     .gpt-success h2 { margin: 0 0 10px; color: var(--gpt-navy); font-family: Georgia, "Times New Roman", serif; font-size: 1.8rem; }
     .gpt-success p { margin: 0; color: var(--gpt-muted); line-height: 1.6; }
     .gpt-honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+    /* Checkbox group */
+    .gpt-checkbox-group { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
+    .gpt-check-option { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--gpt-border); border-radius: 8px; cursor: pointer; font-size: 0.87rem; color: var(--gpt-navy); font-weight: 600; transition: border-color 0.2s, background 0.2s; }
+    .gpt-check-option:hover { border-color: var(--gpt-primary); background: rgba(182,138,58,0.05); }
+    .gpt-check-option input[type="checkbox"] { flex: 0 0 auto; width: 17px; height: 17px; accent-color: var(--gpt-primary); cursor: pointer; }
+    .gpt-check-option:has(input:checked) { border-color: var(--gpt-primary); background: rgba(182,138,58,0.1); }
+    @media (max-width: 620px) { .gpt-checkbox-group { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 900px) {
       .gpt-contact { padding: 60px 18px; }
       .gpt-contact__container { grid-template-columns: 1fr; gap: 40px; }
@@ -460,6 +493,13 @@
         checkbox.removeAttribute("aria-invalid"); error.textContent = ""; return true;
       }
 
+      function validateSupportReason() {
+        const checked = [...document.querySelectorAll('input[name="supportReason"]:checked')];
+        const error = document.getElementById("supportReasonError");
+        if (checked.length === 0) { error.textContent = "Please select at least one reason for tutoring."; return false; }
+        error.textContent = ""; return true;
+      }
+
       function validateForm() {
         let valid = true;
         if (!validateRequired("name", "nameError", "Please enter your name.")) valid = false;
@@ -468,7 +508,7 @@
         if (!validateRequired("studentAge", "studentAgeError", "Please tell us the student's age or year group.")) valid = false;
         if (!validateRequired("subjects", "subjectsError", "Please tell us which subject or subjects are needed.")) valid = false;
         if (!validateRadioGroup()) valid = false;
-        if (!validateRequired("supportReason", "supportReasonError", "Please select the main reason for tutoring.")) valid = false;
+        if (!validateSupportReason()) valid = false;
         if (!validateRequired("startDate", "startDateError", "Please tell us when you'd like tutoring to begin.")) valid = false;
         if (!validatePrivacy()) valid = false;
         return valid;
