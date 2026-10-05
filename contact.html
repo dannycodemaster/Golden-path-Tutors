@@ -19,7 +19,7 @@
     <div class="container">
       <div class="top-bar-info">
         <span><i class="fa-solid fa-phone"></i> +234 810 020 0554 / +234 09074089626</span>
-        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:danieldavid1200@gmail.com" style="color: inherit; text-decoration: none;">danieldavid1200@gmail.com</a></span>
+        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:goldenpathtutors@gmail.com" style="color: inherit; text-decoration: none;">goldenpathtutors@gmail.com</a></span>
       </div>
       <div class="top-bar-auth"></div>
     </div>
@@ -113,10 +113,14 @@
           </button>
         </div>
 
-        <!-- Form connected to Formspree delivering to danieldavid1200@gmail.com -->
-        <form id="gptContactForm" class="gpt-form" action="https://formspree.io/f/xoejqall" method="POST" novalidate>
+        <!-- Form connected to Web3Forms -->
+        <form id="gptContactForm" class="gpt-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
 
-          <input type="hidden" name="_subject" value="New Tutoring Enquiry - Golden Path Tutors">
+          <!-- Web3Forms access key -->
+          <input type="hidden" name="access_key" value="91125182-adab-4aa8-b681-00de3eb54080">
+          <input type="hidden" name="subject" value="New Tutoring Enquiry - Golden Path Tutors">
+          <input type="hidden" name="from_name" value="Golden Path Tutors Website">
+          <input type="checkbox" name="botcheck" class="gpt-honeypot" style="display: none;">
 
           <!-- Honeypot -->
           <div class="gpt-honeypot" aria-hidden="true">
@@ -541,20 +545,21 @@
         spinner.hidden = false;
 
         try {
-          const response = await fetch("https://formspree.io/f/xoejqall", {
+          const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             body: new FormData(form),
             headers: { "Accept": "application/json" }
           });
 
-          if (!response.ok) throw new Error("Submission failed");
+          const result = await response.json();
+          if (!response.ok || result.success === false) throw new Error(result.message || "Submission failed");
 
           form.hidden = true;
           success.hidden = false;
           success.scrollIntoView({ behavior: "smooth", block: "center" });
 
         } catch (err) {
-          formAlert.innerHTML = 'Something went wrong. Please try again or email us directly at <a href="mailto:danieldavid1200@gmail.com" style="color: inherit; font-weight: 700;">danieldavid1200@gmail.com</a>';
+          formAlert.innerHTML = 'Something went wrong. Please try again or email us directly at <a href="mailto:goldenpathtutors@gmail.com" style="color: inherit; font-weight: 700;">goldenpathtutors@gmail.com</a>';
           formAlert.hidden = false;
           formAlert.scrollIntoView({ behavior: "smooth", block: "center" });
         } finally {
