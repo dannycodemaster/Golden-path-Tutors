@@ -360,7 +360,7 @@
     .gpt-grid--2 { grid-template-columns: 1fr 1fr; }
     .gpt-field { margin-bottom: 18px; }
     .gpt-field label { display: block; margin-bottom: 7px; color: var(--gpt-navy); font-size: 0.88rem; font-weight: 700; }
-    .gpt-field label span { color: var(--gpt-error); }
+    .gpt-field > label > span { color: var(--gpt-error); }
     .gpt-field input, .gpt-field select, .gpt-field textarea { width: 100%; border: 1px solid var(--gpt-border); border-radius: 8px; background: #fff; color: var(--gpt-text); font: inherit; font-size: 0.95rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
     .gpt-field input, .gpt-field select { min-height: 48px; padding: 0 14px; }
     .gpt-field textarea { min-height: 130px; padding: 13px 14px; resize: vertical; line-height: 1.55; }
@@ -400,7 +400,8 @@
     .gpt-honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
     /* Checkbox group */
     .gpt-checkbox-group { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
-    .gpt-check-option { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--gpt-border); border-radius: 8px; cursor: pointer; font-size: 0.87rem; color: var(--gpt-navy); font-weight: 600; transition: border-color 0.2s, background 0.2s; }
+    .gpt-check-option { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--gpt-border); border-radius: 8px; cursor: pointer; font-size: 0.87rem; color: #000000; font-weight: 600; transition: border-color 0.2s, background 0.2s; }
+    .gpt-check-option span { color: #000000; }
     .gpt-check-option:hover { border-color: var(--gpt-primary); background: rgba(182,138,58,0.05); }
     .gpt-check-option input[type="checkbox"] { flex: 0 0 auto; width: 17px; height: 17px; accent-color: var(--gpt-primary); cursor: pointer; }
     .gpt-check-option:has(input:checked) { border-color: var(--gpt-primary); background: rgba(182,138,58,0.1); }
