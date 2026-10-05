@@ -73,7 +73,7 @@
           <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Fill out the form below
             and an educational advisor will get back to you within 2 hours.</p>
 
-          <form id="contact-form" action="mailto:danieldavid1200@gmail.com" method="POST" enctype="text/plain">
+          <form id="contact-form" action="https://formspree.io/f/xoejqall" method="POST">
             <div class="form-group">
               <label style="color: var(--color-primary); font-weight: 700;">Your Full Name:</label>
               <input type="text" class="form-control" style="background: #FFF; color: #000;"
@@ -185,10 +185,13 @@
 
   <script type="module" src="/src/js/main.js"></script>
   <script>
-    document.getElementById('contact-form')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thank you! Your message has been received. A Golden Path educational counselor will reach out shortly.');
-      e.target.reset();
+    document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+      // Allow Formspree to handle the submission
+      const btn = this.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+      }
     });
   </script>
 </body>
