@@ -1551,3 +1551,178 @@ body {
     display: none;
   }
 }
+
+/* =========================================================
+   TUTOR CONTACT STRIP BANNER
+   ========================================================= */
+.tutor-contact-strip-wrapper {
+  margin-top: 4.5rem;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.strip-decor-blob {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 130px;
+  height: 130px;
+  background: rgba(245, 176, 20, 0.12);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.strip-decor-dots-left {
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(var(--color-gold) 2px, transparent 2px);
+  background-size: 14px 14px;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.strip-decor-dots-right {
+  position: absolute;
+  bottom: -5px;
+  right: -15px;
+  width: 90px;
+  height: 90px;
+  background-image: radial-gradient(var(--color-gold) 2px, transparent 2px);
+  background-size: 14px 14px;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tutor-contact-strip {
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(135deg, #06101E 0%, #0A192F 55%, #162E52 100%);
+  border-radius: 20px;
+  padding: 2.2rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 16px 36px rgba(6, 16, 30, 0.18);
+  border: 1px solid rgba(245, 176, 20, 0.28);
+  overflow: hidden;
+}
+
+.tutor-contact-strip svg.strip-topo-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.strip-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.strip-side--left {
+  text-align: right;
+  padding-right: 2.5rem;
+}
+
+.strip-side--right {
+  text-align: left;
+  padding-left: 2.5rem;
+}
+
+.strip-label {
+  color: #CBD5E1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.strip-main-link {
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.3vw, 1.75rem);
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  word-break: break-word;
+}
+
+.strip-main-link:hover {
+  color: var(--color-gold);
+  transform: translateY(-1px);
+}
+
+.strip-secondary-phone {
+  margin-top: 0.25rem;
+  color: #CBD5E1;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.strip-secondary-phone a {
+  color: #E2E8F0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.strip-secondary-phone a:hover {
+  color: var(--color-gold);
+}
+
+.strip-divider-or {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 860px) {
+  .tutor-contact-strip {
+    flex-direction: column;
+    padding: 2.2rem 1.5rem;
+    gap: 1.4rem;
+    text-align: center;
+  }
+
+  .strip-side--left,
+  .strip-side--right {
+    text-align: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .strip-divider-or {
+    width: 44px;
+    height: 44px;
+    font-size: 0.95rem;
+  }
+
+  .strip-decor-blob,
+  .strip-decor-dots-left,
+  .strip-decor-dots-right {
+    display: none;
+  }
+}
