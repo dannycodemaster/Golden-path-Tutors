@@ -340,6 +340,11 @@
             </div>
 
             <div class="form-group">
+              <label for="tutor-email"><i class="fa-solid fa-envelope"></i> Email Address *</label>
+              <input type="email" id="tutor-email" name="email" class="form-control" placeholder="e.g. adebayo@example.com" required>
+            </div>
+
+            <div class="form-group">
               <label for="tutor-phone"><i class="fa-solid fa-phone"></i> Phone Number *</label>
               <input type="tel" id="tutor-phone" name="phone" class="form-control" placeholder="e.g. +234 810 020 0554" required>
             </div>
@@ -370,9 +375,9 @@
             </div>
 
             <div class="form-group">
-              <label for="tutor-cv"><i class="fa-solid fa-file-arrow-up"></i> Upload CV / Resume *</label>
+              <label for="tutor-cv"><i class="fa-solid fa-file-arrow-up"></i> Upload CV / Resume (Optional)</label>
               <div class="file-upload-box" id="cvUploadBox">
-                <input type="file" id="tutor-cv" name="attachment" accept=".pdf,.doc,.docx" required>
+                <input type="file" id="tutor-cv" name="attachment" accept=".pdf,.doc,.docx">
                 <div class="file-upload-content">
                   <i class="fa-solid fa-cloud-arrow-up" id="cvIcon"></i>
                   <span id="cvFileName" class="file-text">Click to choose CV file (PDF or Word, max 5MB)</span>
@@ -386,6 +391,26 @@
 
             <div id="tutorStatusMsg"></div>
           </form>
+
+          <!-- Dedicated Success Screen (Replaces form on successful submission) -->
+          <div id="tutorSuccessCard" class="tutor-form-success" style="display: none;">
+            <div style="width: 76px; height: 76px; border-radius: 50%; background: rgba(16, 185, 129, 0.2); border: 2px solid #10B981; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+              <i class="fa-solid fa-check" style="font-size: 2.4rem; color: #10B981;"></i>
+            </div>
+            <h3 style="font-size: 1.45rem; color: #34D399; margin-bottom: 0.75rem; font-weight: 700;">Application Submitted Successfully!</h3>
+            <p id="tutorSuccessText" style="font-size: 0.95rem; color: #E2E8F0; margin-bottom: 1.25rem; line-height: 1.6;"></p>
+            <div id="tutorCvHintBox" style="background: rgba(10, 25, 47, 0.65); border: 1px dashed rgba(245, 176, 20, 0.5); border-radius: 10px; padding: 1rem; margin-bottom: 1.25rem; text-align: left;">
+              <p style="color: var(--color-gold); font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem;">
+                <i class="fa-solid fa-paperclip"></i> CV Document Verification:
+              </p>
+              <p style="color: #CBD5E1; font-size: 0.82rem; margin: 0; line-height: 1.5;">
+                For fast-track credential verification, please email a copy of your CV directly to <a href="mailto:goldenpathtutors@gmail.com" style="color: var(--color-gold); text-decoration: underline; font-weight: 600;">goldenpathtutors@gmail.com</a> or message us on WhatsApp at <a href="https://wa.me/2349074089626" target="_blank" style="color: var(--color-gold); text-decoration: underline; font-weight: 600;">+234 09074089626</a>.
+              </p>
+            </div>
+            <button type="button" id="tutorResetBtn" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4); width: 100%; justify-content: center;">
+              <i class="fa-solid fa-arrow-rotate-left"></i> Submit Another Application
+            </button>
+          </div>
         </div>
 
       </div>
@@ -515,9 +540,9 @@
           <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot"
               style="color: var(--color-gold);"></i> Abuja FCT, Nigeria</p>
           <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone"
-              style="color: var(--color-gold);"></i> +234 (800) 555-GOLD / +234 801 234 5678</p>
+              style="color: var(--color-gold);"></i> +234 810 020 0554 / +234 09074089626</p>
           <p style="font-size: 0.9rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope"
-              style="color: var(--color-gold);"></i> support@goldenpathtutors.com</p>
+              style="color: var(--color-gold);"></i> goldenpathtutors@gmail.com</p>
           <a href="contact.html" class="btn btn-outline-gold" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i
               class="fa-solid fa-paper-plane"></i> Send Message</a>
         </div>

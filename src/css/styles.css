@@ -287,6 +287,25 @@ img {
   box-shadow: 0 8px 20px rgba(10, 25, 47, 0.25);
 }
 
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-gold) 0%, #EAB308 100%);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-gold);
+  font-weight: 800;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FACC15 0%, var(--color-gold) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(245, 176, 20, 0.4);
+}
+
+.btn-gold:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .btn-outline {
   background: transparent;
   border: 2px solid var(--color-primary);
@@ -881,26 +900,41 @@ img {
 }
 
 .tutor-form-success {
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid #10B981;
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.16) 0%, rgba(10, 25, 47, 0.8) 100%);
+  border: 1.5px solid #10B981;
   color: #E2E8F0;
-  border-radius: 10px;
-  padding: 1.25rem;
+  border-radius: 14px;
+  padding: 2.2rem 1.8rem;
   text-align: center;
   margin-top: 1rem;
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.15);
+  animation: tutorFadeIn 0.35s ease-out;
 }
 
+@keyframes tutorFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.tutor-form-success h3,
 .tutor-form-success h4 {
   color: #34D399;
-  font-size: 1.1rem;
-  margin-bottom: 0.4rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
 .tutor-form-success p {
-  font-size: 0.85rem;
-  color: #CBD5E1;
+  font-size: 0.92rem;
+  color: #E2E8F0;
   margin-bottom: 0.8rem;
-  line-height: 1.45;
+  line-height: 1.6;
 }
 
 .tutor-form-error {
