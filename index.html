@@ -277,14 +277,13 @@
     </div>
   </section>
 
-  <!-- Modes Comparison & Interactive Fee Estimator -->
+  <!-- Tutoring Delivery & Become a Tutor -->
   <section class="modes-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Flexible Delivery</span>
-        <h2 class="section-title">Home Tutoring & Online Private Tutoring</h2>
-        <p class="section-subtitle">Choose the learning environment that best fits your family's schedule and lifestyle.
-        </p>
+        <span class="section-tag">Learn & Teach</span>
+        <h2 class="section-title">Home Tutoring, Online Learning & Become a Tutor</h2>
+        <p class="section-subtitle">Choose the learning environment that best fits your family's schedule, or join our faculty as an inspiring educator.</p>
       </div>
 
       <div class="modes-grid">
@@ -321,39 +320,72 @@
             style="width: 100%;"><i class="fa-solid fa-laptop"></i> Connect Online Tutor</a>
         </div>
 
-        <!-- Interactive Fee Estimator Widget -->
-        <div class="calculator-card">
-          <h3><i class="fa-solid fa-calculator" style="color: var(--color-gold);"></i> Tuition Fee Estimator</h3>
-          <p>Estimate your weekly tutoring investment based on mode and hours.</p>
-
-          <div class="form-group">
-            <label for="calc-mode"><i class="fa-solid fa-sliders"></i> Delivery Mode:</label>
-            <select id="calc-mode" class="form-control">
-              <option value="online">Online Virtual Tutoring</option>
-              <option value="home">In-Home Private Tutoring</option>
-            </select>
+        <!-- Become a Tutor Application Card -->
+        <div class="become-tutor-card" id="become-a-tutor">
+          <div>
+            <span class="badge-tutor"><i class="fa-solid fa-chalkboard-user"></i> Join Our Faculty</span>
+            <h3 class="mode-title" style="color: var(--color-white);"><i class="fa-solid fa-graduation-cap" style="color: var(--color-gold);"></i> Become a Tutor</h3>
+            <p class="card-desc">Passionate about teaching? Join our verified tutor network to mentor students and earn competitive pay.</p>
           </div>
 
-          <div class="form-group">
-            <label for="calc-level"><i class="fa-solid fa-layer-group"></i> Academic Level:</label>
-            <select id="calc-level" class="form-control">
-              <option value="primary">Primary School</option>
-              <option value="secondary">Secondary School</option>
-              <option value="examprep">Exam Prep (IGCSE / SAT / WAEC)</option>
-              <option value="adult">Adult Learner</option>
-            </select>
-          </div>
+          <form id="becomeTutorForm" class="become-tutor-form">
+            <input type="hidden" name="access_key" value="48bfd64c-4f7f-434e-a3ea-713f5b5a785d">
+            <input type="hidden" name="subject" value="New Tutor Application - Golden Path Tutors">
+            <input type="hidden" name="from_name" value="Golden Path Tutors Portal">
+            <input type="checkbox" name="botcheck" style="display: none;">
 
-          <div class="form-group">
-            <label for="calc-hours"><i class="fa-solid fa-clock"></i> Weekly Hours:</label>
-            <input type="number" id="calc-hours" class="form-control" value="4" min="1" max="20">
-          </div>
+            <div class="form-group">
+              <label for="tutor-name"><i class="fa-solid fa-user"></i> Full Name *</label>
+              <input type="text" id="tutor-name" name="name" class="form-control" placeholder="e.g. Adebayo Johnson" required>
+            </div>
 
-          <div class="est-price-box">
-            <span style="font-size: 0.85rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px;">Estimated
-              Weekly Tuition</span>
-            <div id="calc-price-output" class="est-price-val">₦76,000 / week</div>
-          </div>
+            <div class="form-group">
+              <label for="tutor-phone"><i class="fa-solid fa-phone"></i> Phone Number *</label>
+              <input type="tel" id="tutor-phone" name="phone" class="form-control" placeholder="e.g. +234 810 020 0554" required>
+            </div>
+
+            <div class="form-group">
+              <label for="tutor-qualification"><i class="fa-solid fa-award"></i> Qualification *</label>
+              <select id="tutor-qualification" name="qualification" class="form-control" required>
+                <option value="" disabled selected>Select Highest Qualification</option>
+                <option value="B.Sc / B.A Degree">B.Sc / B.A Degree</option>
+                <option value="B.Ed (Education)">B.Ed (Education)</option>
+                <option value="M.Sc / M.Ed / Masters">M.Sc / M.Ed / Masters</option>
+                <option value="HND">HND</option>
+                <option value="NCE (Nigeria Certificate in Education)">NCE</option>
+                <option value="Ph.D / Doctorate">Ph.D / Doctorate</option>
+                <option value="Undergraduate (In View)">Undergraduate (In View)</option>
+                <option value="Other Qualification">Other Qualification</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tutor-course-studied"><i class="fa-solid fa-book-open"></i> Course Studied *</label>
+              <input type="text" id="tutor-course-studied" name="course_studied" class="form-control" placeholder="e.g. Mathematics, Biochemistry, English" required>
+            </div>
+
+            <div class="form-group">
+              <label for="tutor-subjects-handle"><i class="fa-solid fa-chalkboard"></i> Course(s) You Can Handle *</label>
+              <input type="text" id="tutor-subjects-handle" name="subjects_can_handle" class="form-control" placeholder="e.g. Maths, Further Maths, Physics, WAEC Prep" required>
+            </div>
+
+            <div class="form-group">
+              <label for="tutor-cv"><i class="fa-solid fa-file-arrow-up"></i> Upload CV / Resume *</label>
+              <div class="file-upload-box" id="cvUploadBox">
+                <input type="file" id="tutor-cv" name="attachment" accept=".pdf,.doc,.docx" required>
+                <div class="file-upload-content">
+                  <i class="fa-solid fa-cloud-arrow-up" id="cvIcon"></i>
+                  <span id="cvFileName" class="file-text">Click to choose CV file (PDF or Word, max 5MB)</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" id="tutorSubmitBtn" class="btn btn-gold" style="width: 100%; margin-top: 0.6rem; justify-content: center;">
+              <i class="fa-solid fa-paper-plane"></i> <span id="tutorBtnText">Submit Tutor Application</span>
+            </button>
+
+            <div id="tutorStatusMsg"></div>
+          </form>
         </div>
 
       </div>
