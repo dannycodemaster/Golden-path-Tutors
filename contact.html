@@ -455,6 +455,31 @@
         else { locationInput.value = ""; locationInput.setAttribute("disabled", "disabled"); }
       }
       tutoringInputs.forEach(i => i.addEventListener("change", updateLocationField));
+
+      /* --- Prefill from URL query params (e.g. from Estimated Fees calculator) --- */
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlTutoringType = urlParams.get("tutoringType");
+        if (urlTutoringType) {
+          const typeRadio = document.querySelector(`input[name="tutoringType"][value="${urlTutoringType}"]`);
+          if (typeRadio) {
+            typeRadio.checked = true;
+          }
+        }
+        const urlSubjects = urlParams.get("subjects");
+        const subjectsInput = document.getElementById("subjects");
+        if (urlSubjects && subjectsInput) {
+          subjectsInput.value = decodeURIComponent(urlSubjects);
+        }
+        const urlLevel = urlParams.get("level");
+        const studentAgeInput = document.getElementById("studentAge");
+        if (urlLevel && studentAgeInput && !studentAgeInput.value) {
+          studentAgeInput.value = decodeURIComponent(urlLevel);
+        }
+      } catch (e) {
+        console.warn("Could not parse query parameters:", e);
+      }
+
       updateLocationField();
 
       /* --- Character count --- */

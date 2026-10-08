@@ -151,6 +151,228 @@
       box-shadow: 0 4px 12px rgba(245, 176, 20, 0.15);
     }
 
+    /* Multiple Subjects Selection Styles */
+    .subject-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .subject-help-text {
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      margin: 0 0 14px 0;
+      line-height: 1.45;
+    }
+
+    .subject-counter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-gold-light, #FEF3C7);
+      color: #92400E;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border: 1px solid rgba(245, 176, 20, 0.45);
+      transition: all 0.2s ease;
+    }
+
+    .subject-counter-badge.at-max {
+      background: #ECFDF5;
+      color: #065F46;
+      border-color: #10B981;
+    }
+
+    .subject-category-filter {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+    }
+
+    .category-filter-btn {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      color: var(--color-primary);
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .category-filter-btn:hover {
+      background: #FFFDF5;
+      border-color: var(--color-gold);
+    }
+
+    .category-filter-btn.active {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border-color: var(--color-primary);
+      box-shadow: 0 4px 10px rgba(10, 25, 47, 0.2);
+    }
+
+    .subject-group {
+      margin-bottom: 20px;
+      transition: all 0.25s ease;
+    }
+
+    .subject-group.hidden {
+      display: none !important;
+    }
+
+    .subject-group-header {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed #E2E8F0;
+    }
+
+    .subject-group-header i {
+      color: var(--color-gold);
+      font-size: 0.95rem;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+      gap: 10px;
+    }
+
+    .subject-card {
+      position: relative;
+      background: #FAFAFA;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 11px 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .subject-card input {
+      display: none;
+    }
+
+    .subject-card:hover:not(.is-disabled) {
+      border-color: var(--color-gold);
+      background: #FFFDF5;
+      transform: translateY(-1px);
+    }
+
+    .subject-card.is-selected {
+      background: var(--color-gold-cream, #FFFBEB);
+      border-color: var(--color-gold, #F5B014);
+      color: #78350F;
+      box-shadow: 0 4px 12px rgba(245, 176, 20, 0.16);
+    }
+
+    .subject-card.is-disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background: #F1F5F9;
+    }
+
+    .subject-card-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .subject-card-left i {
+      font-size: 1rem;
+      color: var(--color-primary);
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .subject-card.is-selected .subject-card-left i {
+      color: #D97706;
+    }
+
+    .subject-card-check {
+      font-size: 1.15rem;
+      color: #CBD5E1;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .subject-card.is-selected .subject-card-check {
+      color: #D97706;
+    }
+
+    .subject-alert-box {
+      display: none;
+      background: #FEF3C7;
+      border: 1px solid #F59E0B;
+      color: #92400E;
+      font-size: 0.84rem;
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin-top: 12px;
+      align-items: center;
+      gap: 8px;
+      animation: alertFadeIn 0.25s ease;
+    }
+
+    @keyframes alertFadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .selected-pills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .selected-pill {
+      background: rgba(245, 176, 20, 0.18);
+      border: 1px solid rgba(245, 176, 20, 0.5);
+      color: #F8FAFC;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .selected-pill i {
+      color: var(--color-gold);
+      font-size: 0.75rem;
+    }
+
     .result-card {
       background: linear-gradient(135deg, #06101E 0%, #0A192F 100%);
       color: #FFFFFF;
@@ -379,85 +601,320 @@
 
       <!-- FORM CARD -->
       <div class="form-card">
-        <h2>Tell us about your learning needs</h2>
+        <h2>Tailor Your Learning Package</h2>
 
         <div class="fields">
 
           <!-- LEVEL -->
           <div class="field">
-            <label for="level">Learning Level</label>
+            <label for="level"><i class="fa-solid fa-graduation-cap" style="color: var(--color-gold);"></i> Learning Level</label>
             <select id="level">
-              <option value="primary">Primary</option>
-              <option value="secondary" selected>Secondary</option>
-              <option value="waec">WAEC / NECO</option>
-              <option value="jamb">JAMB / UTME</option>
-              <option value="university">University</option>
-              <option value="adult">Adult / Professional</option>
-            </select>
-          </div>
-
-          <!-- SUBJECT -->
-          <div class="field">
-            <label for="subject">Subject</label>
-            <select id="subject">
-              <option value="math">Mathematics</option>
-              <option value="english">English Language</option>
-              <option value="physics">Physics</option>
-              <option value="chemistry">Chemistry</option>
-              <option value="biology">Biology</option>
-              <option value="computer">Computer Science</option>
-              <option value="other">Other Subject</option>
+              <option value="early">Early Foundation (EYFS / Nursery / KG)</option>
+              <option value="primary" selected>Primary School (Grades / Basic 1 – 6)</option>
+              <option value="junior">Junior Secondary (JSS 1 – 3)</option>
+              <option value="senior">Senior Secondary (SSS 1 – 3)</option>
+              <option value="waec">WAEC / NECO / GCE Prep</option>
+              <option value="jamb">JAMB / UTME Prep</option>
+              <option value="igcse">Checkpoint / British / IGCSE</option>
+              <option value="adult">Adult & Professional Learning</option>
             </select>
           </div>
 
           <!-- FORMAT -->
-          <div class="field full">
-            <label>Lesson Format</label>
-            <div class="lesson-options">
+          <div class="field">
+            <label><i class="fa-solid fa-chalkboard-user" style="color: var(--color-gold);"></i> Lesson Delivery Format</label>
+            <div class="lesson-options" style="grid-template-columns: repeat(3, 1fr);">
               <div class="lesson-option">
-                <input type="radio" name="format" id="online" value="online" checked>
-                <label for="online">
-                  <i class="fa-solid fa-laptop" style="font-size: 1.25rem; margin-bottom: 6px;"></i>
-                  Online Learning
+                <input type="radio" name="format" id="home" value="home" checked>
+                <label for="home">
+                  <i class="fa-solid fa-house" style="font-size: 1.15rem; margin-bottom: 4px;"></i>
+                  Home Tutoring
                 </label>
               </div>
 
               <div class="lesson-option">
-                <input type="radio" name="format" id="home" value="home">
-                <label for="home">
-                  <i class="fa-solid fa-house" style="font-size: 1.25rem; margin-bottom: 6px;"></i>
-                  Home Tutoring
+                <input type="radio" name="format" id="online" value="online">
+                <label for="online">
+                  <i class="fa-solid fa-laptop" style="font-size: 1.15rem; margin-bottom: 4px;"></i>
+                  Online Tutoring
                 </label>
               </div>
 
               <div class="lesson-option">
                 <input type="radio" name="format" id="group" value="group">
                 <label for="group">
-                  <i class="fa-solid fa-users" style="font-size: 1.25rem; margin-bottom: 6px;"></i>
-                  Group Classes
+                  <i class="fa-solid fa-users" style="font-size: 1.15rem; margin-bottom: 4px;"></i>
+                  Group / Pod
                 </label>
               </div>
             </div>
           </div>
 
+          <!-- SUBJECT SELECTION AREA (FULL WIDTH) -->
+          <div class="field full">
+            <div class="subject-header-row">
+              <label style="margin: 0; font-size: 0.95rem;">
+                <i class="fa-solid fa-book-open" style="color: var(--color-gold);"></i>
+                Select Subjects <span style="color: var(--color-text-muted); font-weight: normal;">(Choose 1 to 4 subjects)</span>
+              </label>
+              <span class="subject-counter-badge" id="subjectCounter">
+                <i class="fa-solid fa-circle-check"></i> <span id="selectedCount">2</span> of 4 subjects selected
+              </span>
+            </div>
+            <p class="subject-help-text">
+              Tailor your monthly package. You can pick between 1 and 4 subjects across early foundation, primary, and secondary curriculum.
+            </p>
+
+            <!-- CATEGORY FILTER PILLS -->
+            <div class="subject-category-filter">
+              <button type="button" class="category-filter-btn active" data-filter="all">
+                <i class="fa-solid fa-layer-group"></i> All Subjects
+              </button>
+              <button type="button" class="category-filter-btn" data-filter="early">
+                <i class="fa-solid fa-shapes"></i> Early Foundation
+              </button>
+              <button type="button" class="category-filter-btn" data-filter="primary">
+                <i class="fa-solid fa-school"></i> Primary School
+              </button>
+              <button type="button" class="category-filter-btn" data-filter="secondary">
+                <i class="fa-solid fa-atom"></i> Secondary & Exam Prep
+              </button>
+            </div>
+
+            <!-- SUBJECT CARDS CONTAINER -->
+            <div class="subject-groups-wrapper">
+
+              <!-- GROUP 1: EARLY FOUNDATION -->
+              <div class="subject-group" data-category="early">
+                <div class="subject-group-header">
+                  <i class="fa-solid fa-shapes"></i> Early Foundation & Pre-Primary (Nursery / EYFS)
+                </div>
+                <div class="subject-grid">
+                  <div class="subject-card is-selected" data-subject="Phonics & Early Reading">
+                    <input type="checkbox" name="subjectChoice" value="Phonics & Early Reading" checked>
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-book-bookmark"></i>
+                      <span>Phonics & Early Reading</span>
+                    </div>
+                    <i class="fa-solid fa-circle-check subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Early Numeracy & Math">
+                    <input type="checkbox" name="subjectChoice" value="Early Numeracy & Math">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-arrow-down-1-9"></i>
+                      <span>Early Numeracy & Math</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Handwriting & Motor Skills">
+                    <input type="checkbox" name="subjectChoice" value="Handwriting & Motor Skills">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-pen-fancy"></i>
+                      <span>Handwriting & Motor Skills</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Creative Art & Pre-writing">
+                    <input type="checkbox" name="subjectChoice" value="Creative Art & Pre-writing">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-palette"></i>
+                      <span>Creative Art & Pre-writing</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- GROUP 2: PRIMARY SCHOOL -->
+              <div class="subject-group" data-category="primary">
+                <div class="subject-group-header">
+                  <i class="fa-solid fa-school"></i> Primary School Subjects (Grades / Basic 1 – 6)
+                </div>
+                <div class="subject-grid">
+                  <div class="subject-card is-selected" data-subject="Primary Mathematics">
+                    <input type="checkbox" name="subjectChoice" value="Primary Mathematics" checked>
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-calculator"></i>
+                      <span>Primary Mathematics</span>
+                    </div>
+                    <i class="fa-solid fa-circle-check subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="English & Grammar">
+                    <input type="checkbox" name="subjectChoice" value="English & Grammar">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-spell-check"></i>
+                      <span>English & Grammar</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Quantitative Reasoning">
+                    <input type="checkbox" name="subjectChoice" value="Quantitative Reasoning">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-brain"></i>
+                      <span>Quantitative Reasoning</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Verbal Reasoning">
+                    <input type="checkbox" name="subjectChoice" value="Verbal Reasoning">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-font"></i>
+                      <span>Verbal Reasoning</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Basic Science & Tech">
+                    <input type="checkbox" name="subjectChoice" value="Basic Science & Tech">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-flask"></i>
+                      <span>Basic Science & Tech</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Social Studies & Civic">
+                    <input type="checkbox" name="subjectChoice" value="Social Studies & Civic">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-landmark"></i>
+                      <span>Social Studies & Civic</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- GROUP 3: SECONDARY & EXAM PREP -->
+              <div class="subject-group" data-category="secondary">
+                <div class="subject-group-header">
+                  <i class="fa-solid fa-atom"></i> Secondary & Exam Prep (JSS / SSS / WAEC / JAMB / IGCSE)
+                </div>
+                <div class="subject-grid">
+                  <div class="subject-card" data-subject="Mathematics (General)">
+                    <input type="checkbox" name="subjectChoice" value="Mathematics (General)">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-square-root-variable"></i>
+                      <span>Mathematics (General)</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="English Language">
+                    <input type="checkbox" name="subjectChoice" value="English Language">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-book-open-reader"></i>
+                      <span>English Language</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Physics">
+                    <input type="checkbox" name="subjectChoice" value="Physics">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-atom"></i>
+                      <span>Physics</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Chemistry">
+                    <input type="checkbox" name="subjectChoice" value="Chemistry">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-vial"></i>
+                      <span>Chemistry</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Biology">
+                    <input type="checkbox" name="subjectChoice" value="Biology">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-dna"></i>
+                      <span>Biology</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Further Mathematics">
+                    <input type="checkbox" name="subjectChoice" value="Further Mathematics">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-chart-line"></i>
+                      <span>Further Mathematics</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Computer Science & ICT">
+                    <input type="checkbox" name="subjectChoice" value="Computer Science & ICT">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-code"></i>
+                      <span>Computer Science & ICT</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Economics & Commerce">
+                    <input type="checkbox" name="subjectChoice" value="Economics & Commerce">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-coins"></i>
+                      <span>Economics & Commerce</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="Literature in English">
+                    <input type="checkbox" name="subjectChoice" value="Literature in English">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-feather-pointed"></i>
+                      <span>Literature in English</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+
+                  <div class="subject-card" data-subject="French & Foreign Languages">
+                    <input type="checkbox" name="subjectChoice" value="French & Foreign Languages">
+                    <div class="subject-card-left">
+                      <i class="fa-solid fa-earth-africa"></i>
+                      <span>French & Foreign Languages</span>
+                    </div>
+                    <i class="fa-regular fa-circle subject-card-check"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ALERT MESSAGE BOX (FOR MIN 1 / MAX 4 LIMIT) -->
+            <div id="subjectAlertBox" class="subject-alert-box">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <span id="subjectAlertText">Maximum 4 subjects allowed per package.</span>
+            </div>
+          </div>
+
           <!-- FREQUENCY -->
           <div class="field">
-            <label for="frequency">Sessions Per Week</label>
+            <label for="frequency"><i class="fa-solid fa-calendar-days" style="color: var(--color-gold);"></i> Sessions Per Week</label>
             <select id="frequency">
-              <option value="1">1 session</option>
-              <option value="2" selected>2 sessions</option>
-              <option value="3">3 sessions</option>
-              <option value="4">4 sessions</option>
+              <option value="1">1 session / week</option>
+              <option value="2" selected>2 sessions / week (Recommended)</option>
+              <option value="3">3 sessions / week</option>
+              <option value="4">4 sessions / week</option>
             </select>
           </div>
 
           <!-- DURATION -->
           <div class="field">
-            <label for="duration">Session Duration</label>
+            <label for="duration"><i class="fa-solid fa-clock" style="color: var(--color-gold);"></i> Session Duration</label>
             <select id="duration">
-              <option value="1">1 hour</option>
-              <option value="1.5" selected>1.5 hours</option>
-              <option value="2">2 hours</option>
+              <option value="1">1.0 hour / session</option>
+              <option value="1.5" selected>1.5 hours / session (Standard)</option>
+              <option value="2">2.0 hours / session (Intensive)</option>
             </select>
           </div>
 
@@ -465,32 +922,37 @@
 
         <p class="note">
           <i class="fa-solid fa-circle-info" style="color: var(--color-gold);"></i>
-          This is an estimated fee only. Final pricing may vary based on tutor experience, location, subject complexity and specific learning requirements.
+          This is an estimated monthly fee range (between ₦100,000 and ₦150,000). Final pricing is agreed after tailored consultation and tutor profile matching.
         </p>
       </div>
 
       <!-- RESULT CARD -->
       <div class="result-card">
         <div class="result-label">Estimated Monthly Fee</div>
-        <div class="price" id="price">₦43,000 – ₦53,000</div>
-        <div class="per-month">estimated per month</div>
+        <div class="price" id="price">₦120,000 – ₦140,000</div>
+        <div class="per-month">estimated per month (1 – 4 subjects)</div>
 
         <div class="divider"></div>
 
         <div class="summary">
           <div class="summary-row">
             <span>Level</span>
-            <span id="summaryLevel">Secondary</span>
+            <span id="summaryLevel">Primary School</span>
           </div>
 
-          <div class="summary-row">
-            <span>Subject</span>
-            <span id="summarySubject">Mathematics</span>
+          <div class="summary-row" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+              <span>Selected Subjects</span>
+              <span id="summarySubjectCount" style="color: var(--color-gold); font-weight: 700;">2 subjects</span>
+            </div>
+            <div id="summarySubjectList" class="selected-pills-wrap">
+              <!-- Dynamically populated subject pills -->
+            </div>
           </div>
 
           <div class="summary-row">
             <span>Format</span>
-            <span id="summaryFormat">Online</span>
+            <span id="summaryFormat">Home Tutoring</span>
           </div>
 
           <div class="summary-row">
@@ -504,7 +966,7 @@
         </button>
 
         <div class="result-note">
-          Final fee will be confirmed after consultation with Golden Path Tutors.
+          Final monthly rate will be confirmed after free educator assessment.
         </div>
       </div>
 
@@ -546,96 +1008,281 @@
 
   <script type="module" src="/src/js/main.js"></script>
   <script>
-    const level = document.getElementById("level");
-    const subject = document.getElementById("subject");
-    const frequency = document.getElementById("frequency");
-    const duration = document.getElementById("duration");
+    (function () {
+      "use strict";
 
-    const price = document.getElementById("price");
+      const level = document.getElementById("level");
+      const frequency = document.getElementById("frequency");
+      const duration = document.getElementById("duration");
+      const price = document.getElementById("price");
 
-    const summaryLevel = document.getElementById("summaryLevel");
-    const summarySubject = document.getElementById("summarySubject");
-    const summaryFormat = document.getElementById("summaryFormat");
-    const summarySchedule = document.getElementById("summarySchedule");
+      const summaryLevel = document.getElementById("summaryLevel");
+      const summarySubjectCount = document.getElementById("summarySubjectCount");
+      const summarySubjectList = document.getElementById("summarySubjectList");
+      const summaryFormat = document.getElementById("summaryFormat");
+      const summarySchedule = document.getElementById("summarySchedule");
 
-    // BASE MONTHLY PRICE
-    const basePrices = {
-      primary: 18000,
-      secondary: 24000,
-      waec: 30000,
-      jamb: 32000,
-      university: 35000,
-      adult: 38000
-    };
+      const selectedCountEl = document.getElementById("selectedCount");
+      const subjectCounter = document.getElementById("subjectCounter");
+      const subjectAlertBox = document.getElementById("subjectAlertBox");
+      const subjectAlertText = document.getElementById("subjectAlertText");
 
-    // SUBJECT MULTIPLIERS
-    const subjectMultiplier = {
-      math: 1,
-      english: 0.95,
-      physics: 1.10,
-      chemistry: 1.10,
-      biology: 1.05,
-      computer: 1.12,
-      other: 1
-    };
+      const subjectCards = document.querySelectorAll(".subject-card");
+      const filterBtns = document.querySelectorAll(".category-filter-btn");
+      const subjectGroups = document.querySelectorAll(".subject-group");
 
-    // LESSON FORMAT MULTIPLIERS
-    const formatMultiplier = {
-      online: 1,
-      home: 1.30,
-      group: 0.72
-    };
+      let alertTimer = null;
 
-    function calculateFee() {
-      const selectedFormat = document.querySelector('input[name="format"]:checked').value;
+      function showAlert(msg) {
+        if (!subjectAlertBox) return;
+        subjectAlertText.textContent = msg;
+        subjectAlertBox.style.display = "flex";
+        clearTimeout(alertTimer);
+        alertTimer = setTimeout(() => {
+          subjectAlertBox.style.display = "none";
+        }, 3200);
+      }
 
-      let monthlyFee =
-        basePrices[level.value] *
-        subjectMultiplier[subject.value] *
-        formatMultiplier[selectedFormat] *
-        Number(frequency.value) *
-        Number(duration.value) *
-        4;
+      function getSelectedSubjects() {
+        const selected = [];
+        subjectCards.forEach(card => {
+          const input = card.querySelector('input[type="checkbox"]');
+          if (input && input.checked) {
+            selected.push(card.getAttribute("data-subject"));
+          }
+        });
+        return selected;
+      }
 
-      monthlyFee = Math.round(monthlyFee / 1000) * 1000;
+      function updateSubjectUI() {
+        const selected = getSelectedSubjects();
+        const count = selected.length;
 
-      const minimum = Math.round((monthlyFee * 0.90) / 1000) * 1000;
-      const maximum = Math.round((monthlyFee * 1.10) / 1000) * 1000;
+        if (selectedCountEl) selectedCountEl.textContent = count;
 
-      price.textContent = "₦" + minimum.toLocaleString() + " – ₦" + maximum.toLocaleString();
+        if (subjectCounter) {
+          if (count === 4) {
+            subjectCounter.classList.add("at-max");
+            subjectCounter.innerHTML = `<i class="fa-solid fa-circle-check"></i> Maximum 4 of 4 subjects selected`;
+          } else {
+            subjectCounter.classList.remove("at-max");
+            subjectCounter.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span id="selectedCount">${count}</span> of 4 subjects selected`;
+          }
+        }
 
-      summaryLevel.textContent = level.options[level.selectedIndex].text;
-      summarySubject.textContent = subject.options[subject.selectedIndex].text;
+        // Update card visual states
+        subjectCards.forEach(card => {
+          const input = card.querySelector('input[type="checkbox"]');
+          const isChecked = input && input.checked;
+          const checkIcon = card.querySelector(".subject-card-check");
 
-      const formatNames = {
-        online: "Online",
-        home: "Home Tutoring",
-        group: "Group Classes"
-      };
+          if (isChecked) {
+            card.classList.add("is-selected");
+            card.classList.remove("is-disabled");
+            if (checkIcon) {
+              checkIcon.className = "fa-solid fa-circle-check subject-card-check";
+            }
+          } else {
+            card.classList.remove("is-selected");
+            if (count >= 4) {
+              card.classList.add("is-disabled");
+            } else {
+              card.classList.remove("is-disabled");
+            }
+            if (checkIcon) {
+              checkIcon.className = "fa-regular fa-circle subject-card-check";
+            }
+          }
+        });
 
-      summaryFormat.textContent = formatNames[selectedFormat];
-      summarySchedule.textContent = frequency.value + " × " + duration.value + " hrs/week";
-    }
+        // Update summary pills
+        if (summarySubjectCount) {
+          summarySubjectCount.textContent = count === 1 ? "1 subject" : `${count} subjects`;
+        }
 
-    // UPDATE WHEN USER CHANGES OPTIONS
-    level.addEventListener("change", calculateFee);
-    subject.addEventListener("change", calculateFee);
-    frequency.addEventListener("change", calculateFee);
-    duration.addEventListener("change", calculateFee);
+        if (summarySubjectList) {
+          summarySubjectList.innerHTML = "";
+          selected.forEach(sub => {
+            const pill = document.createElement("span");
+            pill.className = "selected-pill";
+            pill.innerHTML = `<i class="fa-solid fa-check"></i> ${sub}`;
+            summarySubjectList.appendChild(pill);
+          });
+        }
+      }
 
-    document.querySelectorAll('input[name="format"]').forEach(function(radio) {
-      radio.addEventListener("change", calculateFee);
-    });
+      // Handle card click
+      subjectCards.forEach(card => {
+        card.addEventListener("click", function (e) {
+          const input = card.querySelector('input[type="checkbox"]');
+          if (!input) return;
 
-    // REQUEST TUTOR BUTTON - Navigates to contact page with prefilled context
-    document.getElementById("requestTutor").addEventListener("click", function() {
-      const selectedFormat = document.querySelector('input[name="format"]:checked').value;
-      const formatMode = selectedFormat === "home" ? "in-person" : (selectedFormat === "online" ? "online" : "either");
-      window.location.href = `contact.html?tutoringType=${formatMode}&subjects=${encodeURIComponent(summarySubject.textContent)}`;
-    });
+          const currentlyChecked = input.checked;
+          const selected = getSelectedSubjects();
 
-    // INITIAL CALCULATION
-    calculateFee();
+          if (currentlyChecked) {
+            // Unchecking
+            if (selected.length <= 1) {
+              showAlert("Please keep at least 1 subject selected for your tutoring plan.");
+              return;
+            }
+            input.checked = false;
+          } else {
+            // Checking
+            if (selected.length >= 4) {
+              showAlert("Maximum of 4 subjects per monthly package reached. Deselect one to choose another.");
+              return;
+            }
+            input.checked = true;
+          }
+
+          updateSubjectUI();
+          calculateFee();
+        });
+      });
+
+      // Category filter buttons
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.getAttribute("data-filter");
+          subjectGroups.forEach(group => {
+            const groupCategory = group.getAttribute("data-category");
+            if (filter === "all" || groupCategory === filter) {
+              group.classList.remove("hidden");
+            } else {
+              group.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+      // Synchronize category tab when learning level dropdown changes
+      level.addEventListener("change", () => {
+        const val = level.value;
+        let targetFilter = "all";
+        if (val === "early") targetFilter = "early";
+        else if (val === "primary") targetFilter = "primary";
+        else if (["junior", "senior", "waec", "jamb", "igcse"].includes(val)) targetFilter = "secondary";
+
+        const matchingBtn = document.querySelector(`.category-filter-btn[data-filter="${targetFilter}"]`);
+        if (matchingBtn && targetFilter !== "all") {
+          matchingBtn.click();
+        }
+        calculateFee();
+      });
+
+      // Monthly Price Calculation (Strictly between ₦100,000 and ₦150,000)
+      function calculateFee() {
+        const selectedSubjects = getSelectedSubjects();
+        const numSubjects = Math.max(1, Math.min(4, selectedSubjects.length));
+
+        const selectedFormatRadio = document.querySelector('input[name="format"]:checked');
+        const selectedFormat = selectedFormatRadio ? selectedFormatRadio.value : "home";
+
+        const freqVal = Number(frequency.value) || 2;
+        const durVal = Number(duration.value) || 1.5;
+
+        // Base midpoint score
+        let midpoint = 105000;
+
+        // 1. Number of Subjects factor (1 - 4 subjects)
+        const subjectAddon = {
+          1: 0,
+          2: 6000,
+          3: 14000,
+          4: 22000
+        };
+        midpoint += (subjectAddon[numSubjects] || 0);
+
+        // 2. Learning Level factor
+        const levelAddon = {
+          early: 0,
+          primary: 3000,
+          junior: 6000,
+          senior: 9000,
+          waec: 12000,
+          jamb: 12000,
+          igcse: 15000,
+          adult: 11000
+        };
+        midpoint += (levelAddon[level.value] || 3000);
+
+        // 3. Lesson Delivery Format factor
+        const formatAddon = {
+          online: 0,
+          home: 12000,
+          group: -6000
+        };
+        midpoint += (formatAddon[selectedFormat] || 0);
+
+        // 4. Weekly schedule intensity (frequency & duration)
+        const freqAddon = {
+          1: 0,
+          2: 4000,
+          3: 8000,
+          4: 12000
+        };
+        midpoint += (freqAddon[freqVal] || 4000);
+
+        const durAddon = {
+          1: 0,
+          1.5: 4000,
+          2: 8000
+        };
+        midpoint += (durAddon[durVal] || 4000);
+
+        // Calculate smooth spread and strictly clamp between ₦100,000 and ₦150,000
+        const rawMin = midpoint - 10000;
+        const rawMax = midpoint + 10000;
+
+        const finalMin = Math.max(100000, Math.min(135000, Math.round(rawMin / 5000) * 5000));
+        const finalMax = Math.max(finalMin + 10000, Math.min(150000, Math.round(rawMax / 5000) * 5000));
+
+        price.textContent = `₦${finalMin.toLocaleString()} – ₦${finalMax.toLocaleString()}`;
+
+        // Summary updates
+        summaryLevel.textContent = level.options[level.selectedIndex].text;
+
+        const formatNames = {
+          online: "Online Tutoring",
+          home: "Home Tutoring",
+          group: "Group / Pod"
+        };
+        summaryFormat.textContent = formatNames[selectedFormat] || "Home Tutoring";
+        summarySchedule.textContent = `${freqVal} × ${durVal} hrs/week`;
+      }
+
+      // Event listeners for other controls
+      frequency.addEventListener("change", calculateFee);
+      duration.addEventListener("change", calculateFee);
+
+      document.querySelectorAll('input[name="format"]').forEach(radio => {
+        radio.addEventListener("change", calculateFee);
+      });
+
+      // Request a Tutor Button -> Navigates to contact page with prefilled parameters
+      const requestBtn = document.getElementById("requestTutor");
+      if (requestBtn) {
+        requestBtn.addEventListener("click", () => {
+          const selectedFormatRadio = document.querySelector('input[name="format"]:checked');
+          const selectedFormat = selectedFormatRadio ? selectedFormatRadio.value : "home";
+          const formatMode = selectedFormat === "home" ? "in-person" : (selectedFormat === "online" ? "online" : "either");
+
+          const selectedSubjects = getSelectedSubjects();
+          const subjectsParam = encodeURIComponent(selectedSubjects.join(", "));
+          const levelParam = encodeURIComponent(level.options[level.selectedIndex].text);
+
+          window.location.href = `contact.html?tutoringType=${formatMode}&subjects=${subjectsParam}&level=${levelParam}`;
+        });
+      }
+
+      // Initial setup
+      updateSubjectUI();
+      calculateFee();
+    })();
   </script>
 
 </body>
