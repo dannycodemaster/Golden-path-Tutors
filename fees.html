@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estimated Fees | Golden Path Tutors</title>
-  <meta name="description" content="Calculate and estimate tutoring fees based on learning level, subject, lesson format and weekly schedule with Golden Path Tutors.">
+  <meta name="description"
+    content="Calculate and estimate tutoring fees based on learning level, subject, lesson format and weekly schedule with Golden Path Tutors.">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/src/css/styles.css">
@@ -144,7 +146,7 @@
       background: #FFFDF5;
     }
 
-    .lesson-option input:checked + label {
+    .lesson-option input:checked+label {
       background: var(--color-gold-cream);
       border: 2px solid var(--color-gold);
       color: #92400E;
@@ -186,6 +188,29 @@
       background: #ECFDF5;
       color: #065F46;
       border-color: #10B981;
+    }
+
+    .deselect-btn {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #64748B;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .deselect-btn:hover {
+      background: #FEE2E2;
+      border-color: #F87171;
+      color: #B91C1C;
+      transform: translateY(-1px);
     }
 
     .subject-category-filter {
@@ -344,8 +369,15 @@
     }
 
     @keyframes alertFadeIn {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .selected-pills-wrap {
@@ -607,7 +639,8 @@
 
           <!-- LEVEL -->
           <div class="field">
-            <label for="level"><i class="fa-solid fa-graduation-cap" style="color: var(--color-gold);"></i> Learning Level</label>
+            <label for="level"><i class="fa-solid fa-graduation-cap" style="color: var(--color-gold);"></i> Learning
+              Level</label>
             <select id="level">
               <option value="early">Early Foundation (EYFS / Nursery / KG)</option>
               <option value="primary" selected>Primary School (Grades / Basic 1 – 6)</option>
@@ -622,7 +655,8 @@
 
           <!-- FORMAT -->
           <div class="field">
-            <label><i class="fa-solid fa-chalkboard-user" style="color: var(--color-gold);"></i> Lesson Delivery Format</label>
+            <label><i class="fa-solid fa-chalkboard-user" style="color: var(--color-gold);"></i> Lesson Delivery
+              Format</label>
             <div class="lesson-options" style="grid-template-columns: repeat(3, 1fr);">
               <div class="lesson-option">
                 <input type="radio" name="format" id="home" value="home" checked>
@@ -655,14 +689,21 @@
             <div class="subject-header-row">
               <label style="margin: 0; font-size: 0.95rem;">
                 <i class="fa-solid fa-book-open" style="color: var(--color-gold);"></i>
-                Select Subjects <span style="color: var(--color-text-muted); font-weight: normal;">(Choose 1 to 4 subjects)</span>
+                Select Subjects <span style="color: var(--color-text-muted); font-weight: normal;">(Choose 1 to 4
+                  subjects)</span>
               </label>
-              <span class="subject-counter-badge" id="subjectCounter">
-                <i class="fa-solid fa-circle-check"></i> <span id="selectedCount">2</span> of 4 subjects selected
-              </span>
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <button type="button" id="deselectAllBtn" class="deselect-btn" title="Clear all selected subjects">
+                  <i class="fa-solid fa-xmark"></i> Deselect All
+                </button>
+                <span class="subject-counter-badge" id="subjectCounter">
+                  <i class="fa-solid fa-circle-check"></i> <span id="selectedCount">2</span> of 4 subjects selected
+                </span>
+              </div>
             </div>
             <p class="subject-help-text">
-              Tailor your monthly package. You can pick between 1 and 4 subjects across early foundation, primary, and secondary curriculum.
+              Tailor your monthly package. You can pick between 1 and 4 subjects across early foundation, primary, and
+              secondary curriculum.
             </p>
 
             <!-- CATEGORY FILTER PILLS -->
@@ -899,18 +940,23 @@
 
           <!-- FREQUENCY -->
           <div class="field">
-            <label for="frequency"><i class="fa-solid fa-calendar-days" style="color: var(--color-gold);"></i> Sessions Per Week</label>
+            <label for="frequency"><i class="fa-solid fa-calendar-days" style="color: var(--color-gold);"></i> Sessions
+              Per Week</label>
             <select id="frequency">
               <option value="1">1 session / week</option>
               <option value="2" selected>2 sessions / week (Recommended)</option>
               <option value="3">3 sessions / week</option>
               <option value="4">4 sessions / week</option>
+              <option value="5">5 sessions / week</option>
+              <option value="6">6 sessions / week</option>
+              <option value="7">7 sessions / week</option>
             </select>
           </div>
 
           <!-- DURATION -->
           <div class="field">
-            <label for="duration"><i class="fa-solid fa-clock" style="color: var(--color-gold);"></i> Session Duration</label>
+            <label for="duration"><i class="fa-solid fa-clock" style="color: var(--color-gold);"></i> Session
+              Duration</label>
             <select id="duration">
               <option value="1">1.0 hour / session</option>
               <option value="1.5" selected>1.5 hours / session (Standard)</option>
@@ -922,7 +968,8 @@
 
         <p class="note">
           <i class="fa-solid fa-circle-info" style="color: var(--color-gold);"></i>
-          This is an estimated monthly fee range (between ₦100,000 and ₦150,000). Final pricing is agreed after tailored consultation and tutor profile matching.
+          This is an estimated monthly fee range (between ₦100,000 and ₦150,000). Final pricing is agreed after tailored
+          consultation and tutor profile matching.
         </p>
       </div>
 
@@ -1024,6 +1071,7 @@
 
       const selectedCountEl = document.getElementById("selectedCount");
       const subjectCounter = document.getElementById("subjectCounter");
+      const deselectAllBtn = document.getElementById("deselectAllBtn");
       const subjectAlertBox = document.getElementById("subjectAlertBox");
       const subjectAlertText = document.getElementById("subjectAlertText");
 
@@ -1064,6 +1112,9 @@
           if (count === 4) {
             subjectCounter.classList.add("at-max");
             subjectCounter.innerHTML = `<i class="fa-solid fa-circle-check"></i> Maximum 4 of 4 subjects selected`;
+          } else if (count === 0) {
+            subjectCounter.classList.remove("at-max");
+            subjectCounter.innerHTML = `<i class="fa-regular fa-circle"></i> <span id="selectedCount">0</span> of 4 subjects selected`;
           } else {
             subjectCounter.classList.remove("at-max");
             subjectCounter.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span id="selectedCount">${count}</span> of 4 subjects selected`;
@@ -1097,21 +1148,34 @@
 
         // Update summary pills
         if (summarySubjectCount) {
-          summarySubjectCount.textContent = count === 1 ? "1 subject" : `${count} subjects`;
+          if (count === 0) {
+            summarySubjectCount.textContent = "0 subjects";
+          } else if (count === 1) {
+            summarySubjectCount.textContent = "1 subject";
+          } else {
+            summarySubjectCount.textContent = `${count} subjects`;
+          }
         }
 
         if (summarySubjectList) {
           summarySubjectList.innerHTML = "";
-          selected.forEach(sub => {
-            const pill = document.createElement("span");
-            pill.className = "selected-pill";
-            pill.innerHTML = `<i class="fa-solid fa-check"></i> ${sub}`;
-            summarySubjectList.appendChild(pill);
-          });
+          if (count === 0) {
+            const emptyNotice = document.createElement("span");
+            emptyNotice.style.cssText = "color: #94A3B8; font-size: 0.82rem; font-style: italic;";
+            emptyNotice.textContent = "No subjects selected (Choose 1 to 4)";
+            summarySubjectList.appendChild(emptyNotice);
+          } else {
+            selected.forEach(sub => {
+              const pill = document.createElement("span");
+              pill.className = "selected-pill";
+              pill.innerHTML = `<i class="fa-solid fa-check"></i> ${sub}`;
+              summarySubjectList.appendChild(pill);
+            });
+          }
         }
       }
 
-      // Handle card click
+      // Handle card click (students can select or deselect any card freely)
       subjectCards.forEach(card => {
         card.addEventListener("click", function (e) {
           const input = card.querySelector('input[type="checkbox"]');
@@ -1121,14 +1185,10 @@
           const selected = getSelectedSubjects();
 
           if (currentlyChecked) {
-            // Unchecking
-            if (selected.length <= 1) {
-              showAlert("Please keep at least 1 subject selected for your tutoring plan.");
-              return;
-            }
+            // Allow unchecking completely!
             input.checked = false;
           } else {
-            // Checking
+            // Checking (enforce max 4)
             if (selected.length >= 4) {
               showAlert("Maximum of 4 subjects per monthly package reached. Deselect one to choose another.");
               return;
@@ -1140,6 +1200,18 @@
           calculateFee();
         });
       });
+
+      // Handle Deselect All button
+      if (deselectAllBtn) {
+        deselectAllBtn.addEventListener("click", () => {
+          subjectCards.forEach(card => {
+            const input = card.querySelector('input[type="checkbox"]');
+            if (input) input.checked = false;
+          });
+          updateSubjectUI();
+          calculateFee();
+        });
+      }
 
       // Category filter buttons
       filterBtns.forEach(btn => {
@@ -1177,7 +1249,7 @@
       // Monthly Price Calculation (Strictly between ₦100,000 and ₦150,000)
       function calculateFee() {
         const selectedSubjects = getSelectedSubjects();
-        const numSubjects = Math.max(1, Math.min(4, selectedSubjects.length));
+        const numSubjects = selectedSubjects.length;
 
         const selectedFormatRadio = document.querySelector('input[name="format"]:checked');
         const selectedFormat = selectedFormatRadio ? selectedFormatRadio.value : "home";
@@ -1188,8 +1260,9 @@
         // Base midpoint score
         let midpoint = 105000;
 
-        // 1. Number of Subjects factor (1 - 4 subjects)
+        // 1. Number of Subjects factor (0 - 4 subjects)
         const subjectAddon = {
+          0: 0,
           1: 0,
           2: 6000,
           3: 14000,
@@ -1218,12 +1291,15 @@
         };
         midpoint += (formatAddon[selectedFormat] || 0);
 
-        // 4. Weekly schedule intensity (frequency & duration)
+        // 4. Weekly schedule intensity (frequency 1-7 & duration)
         const freqAddon = {
           1: 0,
           2: 4000,
-          3: 8000,
-          4: 12000
+          3: 7000,
+          4: 10000,
+          5: 13000,
+          6: 15000,
+          7: 18000
         };
         midpoint += (freqAddon[freqVal] || 4000);
 
@@ -1267,11 +1343,20 @@
       const requestBtn = document.getElementById("requestTutor");
       if (requestBtn) {
         requestBtn.addEventListener("click", () => {
+          const selectedSubjects = getSelectedSubjects();
+          if (selectedSubjects.length === 0) {
+            showAlert("Please select at least 1 subject before requesting a tutor.");
+            const subjectSection = document.querySelector(".field.full");
+            if (subjectSection) {
+              subjectSection.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            return;
+          }
+
           const selectedFormatRadio = document.querySelector('input[name="format"]:checked');
           const selectedFormat = selectedFormatRadio ? selectedFormatRadio.value : "home";
           const formatMode = selectedFormat === "home" ? "in-person" : (selectedFormat === "online" ? "online" : "either");
 
-          const selectedSubjects = getSelectedSubjects();
           const subjectsParam = encodeURIComponent(selectedSubjects.join(", "));
           const levelParam = encodeURIComponent(level.options[level.selectedIndex].text);
 
@@ -1286,4 +1371,5 @@
   </script>
 
 </body>
+
 </html>
