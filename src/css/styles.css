@@ -1334,6 +1334,61 @@ footer {
   font-size: 0.98rem;
 }
 
+/* Study Skills & Academic Coaching Card Styles */
+.study-skills-card-container {
+  background: var(--color-bg-light);
+  border-radius: 16px;
+  padding: 2.25rem;
+  border-left: 5px solid #A855F7;
+  box-shadow: var(--shadow-sm);
+}
+
+.study-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.study-skill-item {
+  background: var(--color-white);
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.study-skill-item:hover {
+  transform: translateY(-2px);
+  border-color: #A855F7;
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.12);
+}
+
+.study-skill-item i {
+  color: #7E22CE;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.study-skill-item span {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 600px) {
+  .study-skills-card-container {
+    padding: 1.5rem 1.15rem;
+  }
+  .study-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Page Hero Banner */
 .page-hero-banner {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
