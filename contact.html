@@ -476,6 +476,14 @@
         if (urlLevel && studentAgeInput && !studentAgeInput.value) {
           studentAgeInput.value = decodeURIComponent(urlLevel);
         }
+        const urlPlan = urlParams.get("plan");
+        if (urlPlan && messageEl) {
+          const planText = "Selected Package: " + decodeURIComponent(urlPlan);
+          messageEl.value = messageEl.value ? (planText + "\n\n" + messageEl.value) : planText;
+          if (subjectsInput && !subjectsInput.value) {
+            subjectsInput.value = "Online International Tutoring";
+          }
+        }
       } catch (e) {
         console.warn("Could not parse query parameters:", e);
       }

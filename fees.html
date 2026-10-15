@@ -537,7 +537,346 @@
       line-height: 1.5;
     }
 
+    /* ==========================================================================
+       Online International Tutoring Packages Styles
+       ========================================================================== */
+    .intl-section {
+      margin-top: 60px;
+      padding-top: 50px;
+      border-top: 1px solid #E2E8F0;
+    }
+
+    .intl-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 40px;
+    }
+
+    .intl-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .intl-header h2 {
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      color: var(--color-primary);
+      margin: 0 0 14px;
+    }
+
+    .intl-header p {
+      color: var(--color-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .intl-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 35px;
+    }
+
+    .intl-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 28px 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .intl-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(10, 25, 47, 0.1);
+      border-color: var(--color-gold);
+    }
+
+    .intl-card.featured {
+      background: linear-gradient(180deg, #FFFDF5 0%, #FFFFFF 100%);
+      border: 2px solid var(--color-gold);
+      box-shadow: 0 12px 28px rgba(245, 176, 20, 0.2);
+    }
+
+    .popular-ribbon {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #F5B014 0%, #D97706 100%);
+      color: #0A192F;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(217, 119, 6, 0.35);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .intl-card-header {
+      margin-bottom: 16px;
+    }
+
+    .plan-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #64748B;
+      background: #F1F5F9;
+      padding: 4px 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .plan-tag.highlight {
+      color: #92400E;
+      background: #FEF3C7;
+      border: 1px solid rgba(245, 176, 20, 0.4);
+    }
+
+    .plan-tag.special {
+      color: #065F46;
+      background: #ECFDF5;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+
+    .plan-name {
+      font-size: 1.45rem;
+      color: var(--color-primary);
+      margin: 0 0 8px;
+      font-weight: 800;
+    }
+
+    .plan-sub {
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      line-height: 1.45;
+      margin: 0;
+      min-height: 48px;
+    }
+
+    .intl-price-box {
+      background: #F8FAFC;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+      border: 1px solid #E2E8F0;
+    }
+
+    .intl-card.featured .intl-price-box {
+      background: #FFFBEB;
+      border-color: rgba(245, 176, 20, 0.35);
+    }
+
+    .intl-price {
+      font-size: 2.3rem;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .intl-price .currency {
+      font-size: 1.4rem;
+      vertical-align: super;
+      color: var(--color-gold);
+      font-weight: 800;
+      margin-right: 2px;
+    }
+
+    .intl-price .period {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .calc-pill {
+      display: inline-block;
+      background: #EFF6FF;
+      color: #1E40AF;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .calc-pill.highlight {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .calc-pill.special {
+      background: #ECFDF5;
+      color: #065F46;
+    }
+
+    .schedule-pill {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .intl-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .intl-features li {
+      font-size: 0.85rem;
+      color: var(--color-text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      line-height: 1.4;
+    }
+
+    .intl-features li i {
+      color: #10B981;
+      font-size: 0.88rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .intl-btn {
+      width: 100%;
+      padding: 13px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border: 1.5px solid var(--color-primary);
+      color: var(--color-primary);
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .intl-btn:hover {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    .intl-btn.featured-btn {
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+      color: var(--color-primary-dark);
+      box-shadow: 0 4px 14px rgba(245, 176, 20, 0.3);
+    }
+
+    .intl-btn.featured-btn:hover {
+      background: var(--color-gold-hover);
+      border-color: var(--color-gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 176, 20, 0.4);
+    }
+
+    /* Flexible Weekly Learning Plan Callout Banner */
+    .intl-flexible-banner {
+      background: linear-gradient(135deg, #0A192F 0%, #172A45 100%);
+      border: 2px solid rgba(245, 176, 20, 0.4);
+      border-radius: 18px;
+      padding: 30px 32px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: 0 10px 25px rgba(10, 25, 47, 0.15);
+    }
+
+    .flexible-banner-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 680px;
+    }
+
+    .flexible-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: rgba(245, 176, 20, 0.15);
+      border: 1.5px solid var(--color-gold);
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .flexible-text h3 {
+      font-size: 1.25rem;
+      color: #FFFFFF;
+      margin: 0 0 6px;
+    }
+
+    .flexible-text p {
+      color: #CBD5E1;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .flexible-text strong {
+      color: var(--color-gold);
+    }
+
+    .flexible-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
     /* Responsive */
+    @media (max-width: 1080px) {
+      .intl-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 860px) {
       .estimator {
         grid-template-columns: 1fr;
@@ -549,6 +888,21 @@
 
       .factors {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .intl-flexible-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .flexible-actions {
+        width: 100%;
+      }
+
+      .flexible-actions .btn {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
       }
     }
 
@@ -566,7 +920,7 @@
       }
 
       .lesson-options {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
       }
 
       .factors {
@@ -576,6 +930,15 @@
       .form-card,
       .result-card {
         padding: 22px 18px;
+      }
+
+      .intl-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flexible-banner-content {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -657,12 +1020,13 @@
           <div class="field">
             <label><i class="fa-solid fa-chalkboard-user" style="color: var(--color-gold);"></i> Lesson Delivery
               Format</label>
-            <div class="lesson-options" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="lesson-options" style="grid-template-columns: repeat(2, 1fr); gap: 10px;">
               <div class="lesson-option">
                 <input type="radio" name="format" id="home" value="home" checked>
                 <label for="home">
                   <i class="fa-solid fa-house" style="font-size: 1.15rem; margin-bottom: 4px;"></i>
-                  Home Tutoring
+                  <span>Home Tutoring</span>
+                  <small style="font-size: 0.72rem; color: var(--color-text-muted); font-weight: normal;">In-Person (Abuja)</small>
                 </label>
               </div>
 
@@ -670,7 +1034,18 @@
                 <input type="radio" name="format" id="online" value="online">
                 <label for="online">
                   <i class="fa-solid fa-laptop" style="font-size: 1.15rem; margin-bottom: 4px;"></i>
-                  Online Tutoring
+                  <span>Online Tutoring</span>
+                  <small style="font-size: 0.72rem; color: var(--color-text-muted); font-weight: normal;">Nigeria (₦ NGN)</small>
+                </label>
+              </div>
+
+              <div class="lesson-option">
+                <input type="radio" name="format" id="international" value="international">
+                <label for="international" style="position: relative;">
+                  <span style="position: absolute; top: -6px; right: -4px; background: #0A192F; color: var(--color-gold); font-size: 0.65rem; font-weight: 800; padding: 2px 7px; border-radius: 8px; border: 1px solid rgba(245,176,20,0.4);">USD $</span>
+                  <i class="fa-solid fa-earth-americas" style="font-size: 1.15rem; margin-bottom: 4px; color: #2563EB;"></i>
+                  <span>Online International</span>
+                  <small style="font-size: 0.72rem; color: #B45309; font-weight: 700;">Global ($30/session)</small>
                 </label>
               </div>
 
@@ -678,10 +1053,33 @@
                 <input type="radio" name="format" id="group" value="group">
                 <label for="group">
                   <i class="fa-solid fa-users" style="font-size: 1.15rem; margin-bottom: 4px;"></i>
-                  Group / Pod
+                  <span>Group / Pod</span>
+                  <small style="font-size: 0.72rem; color: var(--color-text-muted); font-weight: normal;">Shared Sessions</small>
                 </label>
               </div>
             </div>
+          </div>
+
+          <!-- DYNAMIC INTERNATIONAL PLAN SELECTOR (Shown when Online International is chosen) -->
+          <div class="field full" id="intlPlanField" style="display: none; background: #FFFDF5; border: 1.5px solid var(--color-gold); border-radius: 12px; padding: 18px; margin-top: 4px; animation: alertFadeIn 0.25s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+              <label for="intlPlanSelect" style="margin: 0; font-size: 0.95rem; color: var(--color-primary); font-weight: 800;">
+                <i class="fa-solid fa-globe" style="color: var(--color-gold);"></i> Choose Online International Package
+              </label>
+              <a href="#international-fees" style="font-size: 0.8rem; font-weight: 700; color: #B45309; text-decoration: underline;">
+                Compare All 4 Plans In Detail <i class="fa-solid fa-arrow-down"></i>
+              </a>
+            </div>
+            <select id="intlPlanSelect" style="width: 100%; height: 48px; border: 1.5px solid #CBD5E1; border-radius: 10px; padding: 0 14px; font-size: 0.95rem; font-weight: 600; font-family: inherit; background: #FFFFFF; color: var(--color-primary);">
+              <option value="gold" selected>Gold Plan – Basic Academic Support ($240/mo • 2 sessions/wk, 8 sessions/mo)</option>
+              <option value="platinum">Platinum Plan – Academic Progress ($360/mo • 3 sessions/wk, 12 sessions/mo) [Most Popular]</option>
+              <option value="elite">Elite Plan – Academic Mastery ($480/mo • 2 sessions/wk, 2 hrs each, 16 hrs/mo)</option>
+              <option value="intensive">Intensive Plan – Academic Transformation ($500/mo • 4 sessions/wk, 16 hrs/mo)</option>
+              <option value="flexible">Flexible Weekly Learning Plan (Custom sessions / hours as preferred)</option>
+            </select>
+            <p style="font-size: 0.82rem; color: #78350F; margin: 10px 0 0 0; line-height: 1.45;">
+              <i class="fa-solid fa-circle-check" style="color: #10B981;"></i> Live 1-on-1 virtual sessions with vetted subject teachers. British, American, IB, Canadian & Nigerian curriculums supported.
+            </p>
           </div>
 
           <!-- SUBJECT SELECTION AREA (FULL WIDTH) -->
@@ -975,9 +1373,12 @@
 
       <!-- RESULT CARD -->
       <div class="result-card">
-        <div class="result-label">Estimated Monthly Fee</div>
+        <div class="result-label" id="resultLabel">Estimated Monthly Fee</div>
         <div class="price" id="price">₦120,000 – ₦140,000</div>
-        <div class="per-month">estimated per month (1 – 4 subjects)</div>
+        <div class="per-month" id="perMonth">estimated per month (1 – 4 subjects)</div>
+        <div id="intlCalcFormula" class="calc-pill highlight" style="display: none; margin-top: 8px; width: 100%; text-align: center;">
+          <i class="fa-solid fa-calculator"></i> $30 × 8 sessions = $240
+        </div>
 
         <div class="divider"></div>
 
@@ -985,6 +1386,11 @@
           <div class="summary-row">
             <span>Level</span>
             <span id="summaryLevel">Primary School</span>
+          </div>
+
+          <div class="summary-row" id="intlPackageRow" style="display: none;">
+            <span>International Plan</span>
+            <span id="summaryIntlPlan" style="color: var(--color-gold); font-weight: 700;">Gold Plan</span>
           </div>
 
           <div class="summary-row" style="flex-direction: column; align-items: flex-start; gap: 6px;">
@@ -1012,12 +1418,187 @@
           Request a Tutor <i class="fa-solid fa-arrow-right"></i>
         </button>
 
-        <div class="result-note">
+        <div class="result-note" id="resultNote">
           Final monthly rate will be confirmed after free educator assessment.
         </div>
       </div>
 
     </div>
+
+    <!-- ==========================================================================
+         ONLINE INTERNATIONAL TUTORING FEES SECTION
+         ========================================================================== -->
+    <section id="international-fees" class="intl-section">
+      <div class="intl-header">
+        <span class="intl-badge">
+          <i class="fa-solid fa-earth-americas"></i> Global & Diaspora Tutoring
+        </span>
+        <h2>Online International Tutoring Plans</h2>
+        <p>
+          World-class 1-on-1 online instruction tailored for international students and diaspora families in the UK, US, Canada, Europe, Middle East, and beyond. Delivered live by vetted subject specialists via interactive digital classrooms.
+        </p>
+      </div>
+
+      <!-- 4 PRICING CARDS -->
+      <div class="intl-grid">
+
+        <!-- 1. GOLD PLAN -->
+        <div class="intl-card">
+          <div class="intl-card-header">
+            <span class="plan-tag">Basic Academic Support</span>
+            <h3 class="plan-name">Gold Plan</h3>
+            <p class="plan-sub">Ideal for targeted homework assistance, foundational review, and subject reinforcement.</p>
+          </div>
+          <div class="intl-price-box">
+            <div class="intl-price">
+              <span class="currency">$</span>240
+              <span class="period">/ month</span>
+            </div>
+            <div class="calc-pill">
+              <i class="fa-solid fa-calculator"></i> $30 × 8 = $240
+            </div>
+            <div class="schedule-pill">
+              <i class="fa-solid fa-calendar-check"></i> 2 sessions/wk → 8 sessions/mo
+            </div>
+          </div>
+          <ul class="intl-features">
+            <li><i class="fa-solid fa-check"></i> 1-on-1 Live Interactive Virtual Lessons</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated Vetted Subject Specialist</li>
+            <li><i class="fa-solid fa-check"></i> Homework Guidance & Topic Clarification</li>
+            <li><i class="fa-solid fa-check"></i> British, US, IB & Nigerian Curriculum</li>
+            <li><i class="fa-solid fa-check"></i> Monthly Academic Progress Report</li>
+            <li><i class="fa-solid fa-check"></i> Flexible Timezone Scheduling</li>
+          </ul>
+          <a href="contact.html?tutoringType=online&plan=Gold%20Plan%20%E2%80%93%20Basic%20Academic%20Support%20($240/mo)" class="intl-btn">
+            Choose Gold Plan <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- 2. PLATINUM PLAN (MOST POPULAR) -->
+        <div class="intl-card featured">
+          <div class="popular-ribbon">
+            <i class="fa-solid fa-star"></i> Most Popular
+          </div>
+          <div class="intl-card-header">
+            <span class="plan-tag highlight">Academic Progress</span>
+            <h3 class="plan-name">Platinum Plan</h3>
+            <p class="plan-sub">Our most popular package for steady grade progression, confidence building, and multi-subject mastery.</p>
+          </div>
+          <div class="intl-price-box">
+            <div class="intl-price">
+              <span class="currency">$</span>360
+              <span class="period">/ month</span>
+            </div>
+            <div class="calc-pill highlight">
+              <i class="fa-solid fa-calculator"></i> $30 × 12 = $360
+            </div>
+            <div class="schedule-pill">
+              <i class="fa-solid fa-calendar-check"></i> 3 sessions/wk → 12 sessions/mo
+            </div>
+          </div>
+          <ul class="intl-features">
+            <li><i class="fa-solid fa-check"></i> Everything in Gold Plan</li>
+            <li><i class="fa-solid fa-check"></i> Multi-Subject Coverage (Maths, English, Science)</li>
+            <li><i class="fa-solid fa-check"></i> Regular Topic Quizzes & Milestone Tracking</li>
+            <li><i class="fa-solid fa-check"></i> Priority Tutor Matching & Continuity</li>
+            <li><i class="fa-solid fa-check"></i> Bi-Weekly Parent Feedback & Check-ins</li>
+            <li><i class="fa-solid fa-check"></i> Session Notes & Worksheets Included</li>
+          </ul>
+          <a href="contact.html?tutoringType=online&plan=Platinum%20Plan%20%E2%80%93%20Academic%20Progress%20($360/mo)" class="intl-btn featured-btn">
+            Choose Platinum Plan <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- 3. ELITE PLAN -->
+        <div class="intl-card">
+          <div class="intl-card-header">
+            <span class="plan-tag">Academic Mastery</span>
+            <h3 class="plan-name">Elite Plan</h3>
+            <p class="plan-sub">Designed for deep conceptual mastery, challenging topics, and senior secondary or exam rigor.</p>
+          </div>
+          <div class="intl-price-box">
+            <div class="intl-price">
+              <span class="currency">$</span>480
+              <span class="period">/ month</span>
+            </div>
+            <div class="calc-pill">
+              <i class="fa-solid fa-calculator"></i> $30 × 16 = $480
+            </div>
+            <div class="schedule-pill">
+              <i class="fa-solid fa-clock"></i> 2 sessions/wk (2 hrs each) → 16 hrs/mo
+            </div>
+          </div>
+          <ul class="intl-features">
+            <li><i class="fa-solid fa-check"></i> In-Depth 2-Hour Intensive Sessions</li>
+            <li><i class="fa-solid fa-check"></i> Senior Subject Specialist & Exam Marker</li>
+            <li><i class="fa-solid fa-check"></i> Deep Problem Solving & Analytical Rigor</li>
+            <li><i class="fa-solid fa-check"></i> Checkpoint, GCSE, IGCSE & AP Exam Prep</li>
+            <li><i class="fa-solid fa-check"></i> Comprehensive Diagnostic Assessment</li>
+            <li><i class="fa-solid fa-check"></i> Customized Question Banks & Drills</li>
+          </ul>
+          <a href="contact.html?tutoringType=online&plan=Elite%20Plan%20%E2%80%93%20Academic%20Mastery%20($480/mo)" class="intl-btn">
+            Choose Elite Plan <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- 4. INTENSIVE PLAN -->
+        <div class="intl-card">
+          <div class="intl-card-header">
+            <span class="plan-tag special">Academic Transformation</span>
+            <h3 class="plan-name">Intensive Plan</h3>
+            <p class="plan-sub">Maximum acceleration for rapid academic turnaround, imminent major exams, or intensive schooling.</p>
+          </div>
+          <div class="intl-price-box">
+            <div class="intl-price">
+              <span class="currency">$</span>500
+              <span class="period">/ month</span>
+            </div>
+            <div class="calc-pill special">
+              <i class="fa-solid fa-bolt"></i> $30 × 16 = $500 Intensive Bundle
+            </div>
+            <div class="schedule-pill">
+              <i class="fa-solid fa-calendar-days"></i> 4 sessions/wk → 16 hours/mo
+            </div>
+          </div>
+          <ul class="intl-features">
+            <li><i class="fa-solid fa-check"></i> Immersive 4 Sessions/Week Cadence</li>
+            <li><i class="fa-solid fa-check"></i> Rapid Grade Transformation & Catch-Up</li>
+            <li><i class="fa-solid fa-check"></i> Full Past Paper Drills & Exam Techniques</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated Lead Educator & Academic Mentor</li>
+            <li><i class="fa-solid fa-check"></i> Weekly Progress Review & Strategy Adjustments</li>
+            <li><i class="fa-solid fa-check"></i> Priority Academic Guidance & Feedback</li>
+          </ul>
+          <a href="contact.html?tutoringType=online&plan=Intensive%20Plan%20%E2%80%93%20Academic%20Transformation%20($500/mo)" class="intl-btn">
+            Choose Intensive Plan <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FLEXIBLE LEARNING PLAN CALLOUT BANNER -->
+      <div class="intl-flexible-banner">
+        <div class="flexible-banner-content">
+          <div class="flexible-icon">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
+          <div class="flexible-text">
+            <h3>Need a Custom Schedule? Flexible Weekly Plans Available</h3>
+            <p>
+              We understand every child's academic journey and family timetable is unique. 
+              <strong>We can also arrange a flexible weekly learning plan depending on the number of sessions or hours the parent would prefer.</strong>
+            </p>
+          </div>
+        </div>
+        <div class="flexible-actions">
+          <a href="contact.html?tutoringType=online&plan=Flexible%20Weekly%20Learning%20Plan" class="btn btn-primary">
+            <i class="fa-solid fa-calendar-plus"></i> Request Custom Plan
+          </a>
+          <a href="https://wa.me/2348100200554?text=Hello%20Golden%20Path%20Tutors,%20I%20would%20like%20to%20arrange%20a%20flexible%20weekly%20learning%20plan%20for%20online%20international%20tutoring." target="_blank" rel="noopener" class="btn btn-outline" style="border-color: #25D366; color: #25D366; background: rgba(37,211,102,0.08);">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- FACTORS -->
     <div class="factors">
@@ -1246,13 +1827,115 @@
         calculateFee();
       });
 
-      // Monthly Price Calculation (Strictly between ₦100,000 and ₦150,000)
+      // Element references for international fees and calculation
+      const intlPlanField = document.getElementById("intlPlanField");
+      const intlPlanSelect = document.getElementById("intlPlanSelect");
+      const resultLabel = document.getElementById("resultLabel");
+      const perMonth = document.getElementById("perMonth");
+      const intlCalcFormula = document.getElementById("intlCalcFormula");
+      const intlPackageRow = document.getElementById("intlPackageRow");
+      const summaryIntlPlan = document.getElementById("summaryIntlPlan");
+      const resultNote = document.getElementById("resultNote");
+
+      // International Plan Definitions
+      const intlPlans = {
+        gold: {
+          name: "Gold Plan – Basic Academic Support",
+          priceDisplay: "$240",
+          subText: "billed monthly in USD ($) • 1 – 4 subjects",
+          formula: '<i class="fa-solid fa-calculator"></i> $30 × 8 = $240 (2 sessions/week)',
+          schedule: "2 sessions / week (8 sessions / month)",
+          note: "Live 1-on-1 virtual sessions with vetted international curriculum tutor."
+        },
+        platinum: {
+          name: "Platinum Plan – Academic Progress",
+          priceDisplay: "$360",
+          subText: "billed monthly in USD ($) • [Most Popular]",
+          formula: '<i class="fa-solid fa-calculator"></i> $30 × 12 = $360 (3 sessions/week)',
+          schedule: "3 sessions / week (12 sessions / month)",
+          note: "Priority tutor matching, multi-subject support & bi-weekly parent feedback."
+        },
+        elite: {
+          name: "Elite Plan – Academic Mastery",
+          priceDisplay: "$480",
+          subText: "billed monthly in USD ($) • 16 hours/month",
+          formula: '<i class="fa-solid fa-calculator"></i> $30 × 16 = $480 (2 hrs/session)',
+          schedule: "2 sessions / week (2 hrs each → 16 hrs / month)",
+          note: "Senior subject specialist for deep conceptual mastery & exam preparation."
+        },
+        intensive: {
+          name: "Intensive Plan – Academic Transformation",
+          priceDisplay: "$500",
+          subText: "billed monthly in USD ($) • 16 hours intensive bundle",
+          formula: '<i class="fa-solid fa-bolt"></i> 4 sessions/week → 16 hours/mo ($500 bundled)',
+          schedule: "4 sessions / week (16 hours / month)",
+          note: "Maximum acceleration & rapid turnaround for major exams or homeschooling."
+        },
+        flexible: {
+          name: "Flexible Weekly Learning Plan",
+          priceDisplay: "Custom Plan",
+          subText: "tailored per parent preference ($30 / session)",
+          formula: '<i class="fa-solid fa-sliders"></i> Flexible weekly sessions arranged to fit your timetable',
+          schedule: "Custom weekly hours / sessions",
+          note: "We arrange a custom schedule depending on sessions or hours preferred."
+        }
+      };
+
+      // Price Calculation: Strictly Domestic ₦100k-₦150k OR Online International USD Plans
       function calculateFee() {
         const selectedSubjects = getSelectedSubjects();
         const numSubjects = selectedSubjects.length;
 
         const selectedFormatRadio = document.querySelector('input[name="format"]:checked');
         const selectedFormat = selectedFormatRadio ? selectedFormatRadio.value : "home";
+
+        // Summary Level
+        if (summaryLevel) {
+          summaryLevel.textContent = level.options[level.selectedIndex].text;
+        }
+
+        // =========================================================================
+        // CASE A: ONLINE INTERNATIONAL (USD $ Plans)
+        // =========================================================================
+        if (selectedFormat === "international") {
+          if (intlPlanField) intlPlanField.style.display = "block";
+          if (intlCalcFormula) intlCalcFormula.style.display = "block";
+          if (intlPackageRow) intlPackageRow.style.display = "flex";
+
+          const chosenPlanKey = intlPlanSelect ? intlPlanSelect.value : "gold";
+          const planData = intlPlans[chosenPlanKey] || intlPlans.gold;
+
+          if (resultLabel) resultLabel.textContent = "Estimated Monthly Fee (USD)";
+          if (price) price.textContent = planData.priceDisplay;
+          if (perMonth) perMonth.textContent = planData.subText;
+          if (intlCalcFormula) intlCalcFormula.innerHTML = planData.formula;
+          if (summaryFormat) summaryFormat.textContent = "Online International ($ USD)";
+          if (summaryIntlPlan) summaryIntlPlan.textContent = planData.name;
+          if (summarySchedule) summarySchedule.textContent = planData.schedule;
+          if (resultNote) resultNote.textContent = planData.note;
+
+          const requestBtn = document.getElementById("requestTutor");
+          if (requestBtn) {
+            requestBtn.innerHTML = 'Request International Tutor <i class="fa-solid fa-arrow-right"></i>';
+          }
+          return;
+        }
+
+        // =========================================================================
+        // CASE B: DOMESTIC IN-PERSON & LOCAL ONLINE (₦100,000 – ₦150,000)
+        // =========================================================================
+        if (intlPlanField) intlPlanField.style.display = "none";
+        if (intlCalcFormula) intlCalcFormula.style.display = "none";
+        if (intlPackageRow) intlPackageRow.style.display = "none";
+
+        if (resultLabel) resultLabel.textContent = "Estimated Monthly Fee";
+        if (perMonth) perMonth.textContent = "estimated per month (1 – 4 subjects)";
+        if (resultNote) resultNote.textContent = "Final monthly rate will be confirmed after free educator assessment.";
+
+        const requestBtn = document.getElementById("requestTutor");
+        if (requestBtn) {
+          requestBtn.innerHTML = 'Request a Tutor <i class="fa-solid fa-arrow-right"></i>';
+        }
 
         const freqVal = Number(frequency.value) || 2;
         const durVal = Number(duration.value) || 1.5;
@@ -1317,27 +2000,34 @@
         const finalMin = Math.max(100000, Math.min(135000, Math.round(rawMin / 5000) * 5000));
         const finalMax = Math.max(finalMin + 10000, Math.min(150000, Math.round(rawMax / 5000) * 5000));
 
-        price.textContent = `₦${finalMin.toLocaleString()} – ₦${finalMax.toLocaleString()}`;
-
-        // Summary updates
-        summaryLevel.textContent = level.options[level.selectedIndex].text;
+        if (price) {
+          price.textContent = `₦${finalMin.toLocaleString()} – ₦${finalMax.toLocaleString()}`;
+        }
 
         const formatNames = {
-          online: "Online Tutoring",
+          online: "Online Tutoring (₦ NGN)",
           home: "Home Tutoring",
           group: "Group / Pod"
         };
-        summaryFormat.textContent = formatNames[selectedFormat] || "Home Tutoring";
-        summarySchedule.textContent = `${freqVal} × ${durVal} hrs/week`;
+        if (summaryFormat) {
+          summaryFormat.textContent = formatNames[selectedFormat] || "Home Tutoring";
+        }
+        if (summarySchedule) {
+          summarySchedule.textContent = `${freqVal} × ${durVal} hrs/week`;
+        }
       }
 
-      // Event listeners for other controls
+      // Event listeners for controls
       frequency.addEventListener("change", calculateFee);
       duration.addEventListener("change", calculateFee);
 
       document.querySelectorAll('input[name="format"]').forEach(radio => {
         radio.addEventListener("change", calculateFee);
       });
+
+      if (intlPlanSelect) {
+        intlPlanSelect.addEventListener("change", calculateFee);
+      }
 
       // Request a Tutor Button -> Navigates to contact page with prefilled parameters
       const requestBtn = document.getElementById("requestTutor");
@@ -1355,13 +2045,28 @@
 
           const selectedFormatRadio = document.querySelector('input[name="format"]:checked');
           const selectedFormat = selectedFormatRadio ? selectedFormatRadio.value : "home";
-          const formatMode = selectedFormat === "home" ? "in-person" : (selectedFormat === "online" ? "online" : "either");
 
           const subjectsParam = encodeURIComponent(selectedSubjects.join(", "));
           const levelParam = encodeURIComponent(level.options[level.selectedIndex].text);
 
-          window.location.href = `contact.html?tutoringType=${formatMode}&subjects=${subjectsParam}&level=${levelParam}`;
+          if (selectedFormat === "international") {
+            const chosenPlanKey = intlPlanSelect ? intlPlanSelect.value : "gold";
+            const planData = intlPlans[chosenPlanKey] || intlPlans.gold;
+            const planParam = encodeURIComponent(`${planData.name} (${planData.priceDisplay}/mo)`);
+            window.location.href = `contact.html?tutoringType=online&plan=${planParam}&subjects=${subjectsParam}&level=${levelParam}`;
+          } else {
+            const formatMode = selectedFormat === "home" ? "in-person" : (selectedFormat === "online" ? "online" : "either");
+            window.location.href = `contact.html?tutoringType=${formatMode}&subjects=${subjectsParam}&level=${levelParam}`;
+          }
         });
+      }
+
+      // Auto-select International option if URL contains #international-fees or ?format=international
+      if (window.location.hash === "#international-fees" || window.location.search.includes("format=international")) {
+        const intlRadio = document.getElementById("international");
+        if (intlRadio) {
+          intlRadio.checked = true;
+        }
       }
 
       // Initial setup
