@@ -181,6 +181,91 @@
       letter-spacing: 0.04em;
     }
 
+    /* International Session Cards */
+    .intl-session-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 12px 0 10px;
+    }
+
+    .intl-session-btn {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      user-select: none;
+    }
+
+    .intl-session-btn:hover {
+      border-color: var(--color-gold);
+      background: #FFFDF5;
+      transform: translateY(-2px);
+    }
+
+    .intl-session-btn.is-active {
+      border: 2px solid var(--color-gold);
+      background: var(--color-gold-cream);
+      box-shadow: 0 4px 12px rgba(245, 176, 20, 0.2);
+    }
+
+    .intl-session-btn .session-badge {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 2px;
+      line-height: 1.25;
+    }
+
+    .intl-session-btn.is-active .session-badge {
+      color: #92400E;
+    }
+
+    .intl-session-btn .session-sub {
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      margin-bottom: 6px;
+    }
+
+    .intl-session-btn .session-price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+
+    .intl-session-btn.is-active .session-price {
+      color: #B45309;
+    }
+
+    .intl-session-btn .session-plan-name {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .intl-session-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .intl-session-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     /* Multiple Subjects Selection Styles */
     .subject-header-row {
       display: flex;
@@ -1084,28 +1169,71 @@
             </div>
           </div>
 
-          <!-- DYNAMIC INTERNATIONAL PLAN SELECTOR (Shown when Online International is chosen) -->
+          <!-- DYNAMIC INTERNATIONAL SESSIONS & PLAN SELECTOR (Shown when Online International is chosen) -->
           <div class="field full" id="intlPlanField"
             style="display: none; background: #FFFDF5; border: 1.5px solid var(--color-gold); border-radius: 12px; padding: 18px; margin-top: 4px; animation: alertFadeIn 0.25s ease;">
             <div
-              style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
-              <label for="intlPlanSelect"
-                style="margin: 0; font-size: 0.95rem; color: var(--color-primary); font-weight: 800;">
-                <i class="fa-solid fa-globe" style="color: var(--color-gold);"></i> Choose Online International Package
+              style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
+              <label style="margin: 0; font-size: 0.95rem; color: var(--color-primary); font-weight: 800;">
+                <i class="fa-solid fa-calendar-days" style="color: var(--color-gold);"></i> Select Weekly Sessions (International)
               </label>
               <a href="#international-fees"
                 style="font-size: 0.8rem; font-weight: 700; color: #B45309; text-decoration: underline;">
                 Compare All 4 Plans In Detail <i class="fa-solid fa-arrow-down"></i>
               </a>
             </div>
-            <select id="intlPlanSelect"
-              style="width: 100%; height: 48px; border: 1.5px solid #CBD5E1; border-radius: 10px; padding: 0 14px; font-size: 0.95rem; font-weight: 600; font-family: inherit; background: #FFFFFF; color: var(--color-primary);">
+            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin: 0 0 10px 0;">
+              Select the number of sessions per week or request a flexible learning schedule.
+            </p>
+
+            <!-- 5 INTERACTIVE SESSION BUTTONS -->
+            <div class="intl-session-grid" id="intlSessionGrid">
+              <div class="intl-session-btn is-active" data-plan="gold">
+                <span class="session-badge">2 Sessions / wk</span>
+                <span class="session-sub">8 sessions / month</span>
+                <span class="session-price">$240 <small style="font-size: 0.72rem; font-weight: normal;">/mo</small></span>
+                <span class="session-plan-name">Gold Plan</span>
+              </div>
+
+              <div class="intl-session-btn" data-plan="platinum">
+                <span style="position: absolute; top: -7px; right: 8px; background: #B45309; color: #FFF; font-size: 0.6rem; font-weight: 800; padding: 1px 6px; border-radius: 6px;">POPULAR</span>
+                <span class="session-badge">3 Sessions / wk</span>
+                <span class="session-sub">12 sessions / month</span>
+                <span class="session-price">$360 <small style="font-size: 0.72rem; font-weight: normal;">/mo</small></span>
+                <span class="session-plan-name">Platinum Plan</span>
+              </div>
+
+              <div class="intl-session-btn" data-plan="elite">
+                <span class="session-badge">2 Sessions (2 hrs)</span>
+                <span class="session-sub">16 hours / month</span>
+                <span class="session-price">$480 <small style="font-size: 0.72rem; font-weight: normal;">/mo</small></span>
+                <span class="session-plan-name">Elite Plan</span>
+              </div>
+
+              <div class="intl-session-btn" data-plan="intensive">
+                <span class="session-badge">4 Sessions / wk</span>
+                <span class="session-sub">16 hours / month</span>
+                <span class="session-price">$500 <small style="font-size: 0.72rem; font-weight: normal;">/mo</small></span>
+                <span class="session-plan-name">Intensive Plan</span>
+              </div>
+
+              <div class="intl-session-btn" data-plan="flexible">
+                <span class="session-badge">Flexible Plan</span>
+                <span class="session-sub">Custom schedule</span>
+                <span class="session-price">Custom</span>
+                <span class="session-plan-name">Tailored</span>
+              </div>
+            </div>
+
+            <!-- HIDDEN SYNCED SELECT -->
+            <select id="intlPlanSelect" style="display: none;">
               <option value="gold" selected>Gold Plan – Basic Academic Support</option>
-              <option value="platinum">Platinum Plan – Academic Progress [Most Popular]</option>
-              <option value="elite">Elite Plan – Academic Mastery </option>
+              <option value="platinum">Platinum Plan – Academic Progress</option>
+              <option value="elite">Elite Plan – Academic Mastery</option>
               <option value="intensive">Intensive Plan – Academic Transformation</option>
               <option value="flexible">Flexible Weekly Learning Plan</option>
             </select>
+
             <p style="font-size: 0.82rem; color: #78350F; margin: 10px 0 0 0; line-height: 1.45;">
               <i class="fa-solid fa-circle-check" style="color: #10B981;"></i> Live 1-on-1 virtual sessions with vetted
               subject teachers. British, American, IB, Canadian & Nigerian curriculums supported.
@@ -1406,10 +1534,6 @@
         <div class="result-label" id="resultLabel">Estimated Monthly Fee</div>
         <div class="price" id="price">₦120,000 – ₦140,000</div>
         <div class="per-month" id="perMonth">estimated per month (1 – 4 subjects)</div>
-        <div id="intlCalcFormula" class="calc-pill highlight"
-          style="display: none; margin-top: 8px; width: 100%; text-align: center;">
-          <i class="fa-solid fa-calculator"></i> $30 × 8 sessions = $240
-        </div>
 
         <div class="divider"></div>
 
@@ -1876,10 +2000,10 @@
       const intlPlanSelect = document.getElementById("intlPlanSelect");
       const resultLabel = document.getElementById("resultLabel");
       const perMonth = document.getElementById("perMonth");
-      const intlCalcFormula = document.getElementById("intlCalcFormula");
       const intlPackageRow = document.getElementById("intlPackageRow");
       const summaryIntlPlan = document.getElementById("summaryIntlPlan");
       const resultNote = document.getElementById("resultNote");
+      const intlSessionBtns = document.querySelectorAll(".intl-session-btn");
 
       // International Plan Definitions
       const intlPlans = {
@@ -1887,7 +2011,7 @@
           name: "Gold Plan – Basic Academic Support",
           priceDisplay: "$240",
           subText: "billed monthly in USD ($) • 1 – 4 subjects",
-          formula: '<i class="fa-solid fa-calculator"></i> $30 × 8 = $240 (2 sessions/week)',
+          formula: '$30 × 8 = $240 (2 sessions/week)',
           schedule: "2 sessions / week (8 sessions / month)",
           note: "Live 1-on-1 virtual sessions with vetted international curriculum tutor."
         },
@@ -1895,7 +2019,7 @@
           name: "Platinum Plan – Academic Progress",
           priceDisplay: "$360",
           subText: "billed monthly in USD ($) • [Most Popular]",
-          formula: '<i class="fa-solid fa-calculator"></i> $30 × 12 = $360 (3 sessions/week)',
+          formula: '$30 × 12 = $360 (3 sessions/week)',
           schedule: "3 sessions / week (12 sessions / month)",
           note: "Priority tutor matching, multi-subject support & bi-weekly parent feedback."
         },
@@ -1903,7 +2027,7 @@
           name: "Elite Plan – Academic Mastery",
           priceDisplay: "$480",
           subText: "billed monthly in USD ($) • 16 hours/month",
-          formula: '<i class="fa-solid fa-calculator"></i> $30 × 16 = $480 (2 hrs/session)',
+          formula: '$30 × 16 = $480 (2 hrs/session)',
           schedule: "2 sessions / week (2 hrs each → 16 hrs / month)",
           note: "Senior subject specialist for deep conceptual mastery & exam preparation."
         },
@@ -1911,7 +2035,7 @@
           name: "Intensive Plan – Academic Transformation",
           priceDisplay: "$500",
           subText: "billed monthly in USD ($) • 16 hours intensive bundle",
-          formula: '<i class="fa-solid fa-bolt"></i> 4 sessions/week → 16 hours/mo ($500 bundled)',
+          formula: '4 sessions/week → 16 hours/mo ($500 bundled)',
           schedule: "4 sessions / week (16 hours / month)",
           note: "Maximum acceleration & rapid turnaround for major exams or homeschooling."
         },
@@ -1919,7 +2043,7 @@
           name: "Flexible Weekly Learning Plan",
           priceDisplay: "Custom Plan",
           subText: "tailored per parent preference ($30 / session)",
-          formula: '<i class="fa-solid fa-sliders"></i> Flexible weekly sessions arranged to fit your timetable',
+          formula: 'Flexible weekly sessions arranged to fit your timetable',
           schedule: "Custom weekly hours / sessions",
           note: "We arrange a custom schedule depending on sessions or hours preferred."
         }
@@ -1943,7 +2067,6 @@
         // =========================================================================
         if (selectedFormat === "international") {
           if (intlPlanField) intlPlanField.style.display = "block";
-          if (intlCalcFormula) intlCalcFormula.style.display = "block";
           if (intlPackageRow) intlPackageRow.style.display = "flex";
 
           const chosenPlanKey = intlPlanSelect ? intlPlanSelect.value : "gold";
@@ -1952,7 +2075,6 @@
           if (resultLabel) resultLabel.textContent = "Estimated Monthly Fee (USD)";
           if (price) price.textContent = planData.priceDisplay;
           if (perMonth) perMonth.textContent = planData.subText;
-          if (intlCalcFormula) intlCalcFormula.innerHTML = planData.formula;
           if (summaryFormat) summaryFormat.textContent = "Online International ($ USD)";
           if (summaryIntlPlan) summaryIntlPlan.textContent = planData.name;
           if (summarySchedule) summarySchedule.textContent = planData.schedule;
@@ -1969,7 +2091,6 @@
         // CASE B: DOMESTIC IN-PERSON & LOCAL ONLINE (₦100,000 – ₦150,000)
         // =========================================================================
         if (intlPlanField) intlPlanField.style.display = "none";
-        if (intlCalcFormula) intlCalcFormula.style.display = "none";
         if (intlPackageRow) intlPackageRow.style.display = "none";
 
         if (resultLabel) resultLabel.textContent = "Estimated Monthly Fee";
@@ -2069,8 +2190,31 @@
         radio.addEventListener("change", calculateFee);
       });
 
+      // Session button click handlers for international students
+      intlSessionBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          intlSessionBtns.forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          const planKey = btn.getAttribute("data-plan");
+          if (intlPlanSelect) {
+            intlPlanSelect.value = planKey;
+          }
+          calculateFee();
+        });
+      });
+
       if (intlPlanSelect) {
-        intlPlanSelect.addEventListener("change", calculateFee);
+        intlPlanSelect.addEventListener("change", () => {
+          const planKey = intlPlanSelect.value;
+          intlSessionBtns.forEach(btn => {
+            if (btn.getAttribute("data-plan") === planKey) {
+              btn.classList.add("is-active");
+            } else {
+              btn.classList.remove("is-active");
+            }
+          });
+          calculateFee();
+        });
       }
 
       // Request a Tutor Button -> Navigates to contact page with prefilled parameters
