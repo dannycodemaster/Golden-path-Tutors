@@ -916,6 +916,7 @@ img {
     opacity: 0;
     transform: scale(0.97) translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1384,6 +1385,7 @@ footer {
   .study-skills-card-container {
     padding: 1.5rem 1.15rem;
   }
+
   .study-skills-grid {
     grid-template-columns: 1fr;
   }
@@ -2316,7 +2318,7 @@ body {
 }
 
 .platform-heading .text-coral {
-  color: #F43F5E;
+  color: #ebb729;
 }
 
 .brush-stroke {
@@ -2446,5 +2448,3 @@ body {
     padding: 0.7rem 1rem;
   }
 }
-
-
