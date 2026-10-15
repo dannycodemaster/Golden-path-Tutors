@@ -2151,4 +2151,11 @@ body {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-}
+}
+
+/* Tutor Bio Justified Text */
+.tutor-card .tutor-bio {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
