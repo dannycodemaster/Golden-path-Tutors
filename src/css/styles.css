@@ -2158,4 +2158,293 @@ body {
   text-align: justify;
   text-justify: inter-word;
 }
+
+/* ==========================================================================
+   Platform for Learning Success and Excellence
+   ========================================================================== */
+.platform-success-section {
+  padding: 5.5rem 0;
+  background: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.platform-success-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+/* Left Column: Image Composition */
+.platform-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.platform-decor-dots {
+  position: absolute;
+  top: -24px;
+  left: -20px;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(#F43F5E 2.2px, transparent 2.2px);
+  background-size: 16px 16px;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.platform-decor-blob {
+  position: absolute;
+  top: -35px;
+  left: -35px;
+  width: 240px;
+  height: 240px;
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.platform-image-frame {
+  position: relative;
+  z-index: 2;
+  border-radius: 24px;
+  overflow: visible;
+  max-width: 480px;
+  width: 100%;
+}
+
+.platform-hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(10, 25, 47, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: block;
+}
+
+.platform-floating-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -15px;
+  background: var(--color-white);
+  padding: 0.9rem 1.35rem;
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(10, 25, 47, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border: 1px solid #E2E8F0;
+  z-index: 3;
+}
+
+.platform-floating-badge .badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #EFF6FF;
+  color: var(--color-accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.platform-floating-badge .badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.platform-floating-badge .badge-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.platform-floating-badge .badge-sub {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+/* Right Column: Content */
+.platform-content-col {
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.platform-decor-ring {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 9px solid var(--color-gold);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.platform-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primary-surface);
+  background: #EFF6FF;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.platform-heading {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.platform-heading .text-coral {
+  color: #F43F5E;
+}
+
+.brush-stroke {
+  margin-bottom: 1.4rem;
+  display: flex;
+}
+
+.platform-lead-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--color-text-main);
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.platform-lead-text strong {
+  color: var(--color-primary);
+}
+
+.platform-sub-text {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 1.8rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Platform Features Grid */
+.platform-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.25rem;
+  margin-bottom: 2.2rem;
+  padding: 1.25rem;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+}
+
+.platform-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.platform-feat-item .feat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--color-gold-cream);
+  color: var(--color-gold-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  border: 1px solid var(--color-gold-light);
+}
+
+.platform-cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-outline-navy {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline-navy:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .platform-success-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .platform-content-col {
+    padding-right: 0;
+  }
+
+  .platform-hero-img {
+    height: 400px;
+  }
+
+  .platform-decor-ring {
+    right: 10px;
+    top: -20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .platform-success-section {
+    padding: 3.8rem 0;
+  }
+
+  .platform-heading {
+    font-size: 1.95rem;
+  }
+
+  .platform-hero-img {
+    height: 320px;
+  }
+
+  .platform-features-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .platform-floating-badge {
+    right: 5px;
+    bottom: -15px;
+    padding: 0.7rem 1rem;
+  }
+}
+
 
