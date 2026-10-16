@@ -12,10 +12,23 @@
   <link rel="stylesheet" href="/src/css/styles.css">
 
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+
     .fee-page {
       max-width: 1140px;
       margin: 0 auto;
       padding: 50px 20px 80px;
+      width: 100%;
+      box-sizing: border-box;
+      overflow-x: hidden;
     }
 
     .fee-header {
@@ -54,6 +67,8 @@
       grid-template-columns: 1.35fr 0.85fr;
       gap: 28px;
       align-items: start;
+      width: 100%;
+      min-width: 0;
     }
 
     .form-card,
@@ -61,11 +76,15 @@
       border-radius: 18px;
       padding: 32px;
       box-shadow: var(--shadow-sm);
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .form-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
+      overflow: hidden;
     }
 
     .form-card h2 {
@@ -79,6 +98,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .field {
+      min-width: 0;
+      max-width: 100%;
     }
 
     .field label {
@@ -91,6 +117,8 @@
 
     .field select {
       width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
       height: 48px;
       border: 1px solid #CBD5E1;
       border-radius: 10px;
@@ -100,6 +128,7 @@
       background: #FFFFFF;
       color: var(--color-text-main);
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      min-width: 0;
     }
 
     .field select:focus {
@@ -110,12 +139,23 @@
 
     .full {
       grid-column: 1 / -1;
+      min-width: 0;
+      max-width: 100%;
+      width: 100%;
     }
 
     .lesson-options {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .lesson-option {
+      min-width: 0;
+      width: 100%;
     }
 
     .lesson-option input {
@@ -140,6 +180,14 @@
       background: #FAFAFA;
       line-height: 1.35;
       position: relative;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .lesson-option label span {
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .lesson-option label i {
@@ -331,8 +379,12 @@
       gap: 8px;
       margin-bottom: 16px;
       overflow-x: auto;
-      padding-bottom: 4px;
+      padding-bottom: 6px;
       scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      max-width: 100%;
+      flex-wrap: nowrap;
     }
 
     .category-filter-btn {
@@ -349,6 +401,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      flex-shrink: 0;
     }
 
     .category-filter-btn:hover {
@@ -363,9 +416,16 @@
       box-shadow: 0 4px 10px rgba(10, 25, 47, 0.2);
     }
 
+    .subject-groups-wrapper {
+      width: 100%;
+      min-width: 0;
+    }
+
     .subject-group {
       margin-bottom: 20px;
       transition: all 0.25s ease;
+      width: 100%;
+      min-width: 0;
     }
 
     .subject-group.hidden {
@@ -395,6 +455,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
       gap: 10px;
+      width: 100%;
+      min-width: 0;
     }
 
     .subject-card {
@@ -410,6 +472,9 @@
       gap: 10px;
       transition: all 0.2s ease;
       user-select: none;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
 
     .subject-card input {
@@ -442,6 +507,13 @@
       font-size: 0.88rem;
       font-weight: 600;
       line-height: 1.35;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .subject-card-left span {
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .subject-card-left i {
@@ -524,6 +596,10 @@
       border: 1px solid rgba(245, 176, 20, 0.25);
       position: sticky;
       top: 100px;
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .result-label {
@@ -535,12 +611,14 @@
     }
 
     .price {
-      font-size: clamp(2rem, 3.5vw, 2.5rem);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       font-family: var(--font-heading);
       font-weight: 800;
       color: var(--color-gold);
       margin: 8px 0;
       line-height: 1.15;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .per-month {
@@ -557,23 +635,31 @@
     .summary {
       display: grid;
       gap: 14px;
+      width: 100%;
+      min-width: 0;
     }
 
     .summary-row {
       display: flex;
       justify-content: space-between;
-      gap: 15px;
+      gap: 12px;
       font-size: 0.92rem;
+      min-width: 0;
+      width: 100%;
     }
 
     .summary-row span:first-child {
       color: #94A3B8;
+      flex-shrink: 0;
     }
 
     .summary-row span:last-child {
       font-weight: 700;
       color: #FFFFFF;
       text-align: right;
+      min-width: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .cta {
@@ -998,10 +1084,24 @@
     @media (max-width: 860px) {
       .estimator {
         grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        min-width: 0;
       }
 
       .result-card {
         position: static;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .fields {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .full {
+        grid-column: 1 / -1;
       }
 
       .factors {
@@ -1024,7 +1124,7 @@
       }
 
       .lesson-options {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1033,70 +1133,199 @@
        ============================================= */
     @media (max-width: 600px) {
       .fee-page {
-        padding: 24px 14px 50px;
+        padding: 24px 12px 50px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
       }
 
       .fee-header h1 {
-        font-size: 1.75rem;
+        font-size: 1.65rem;
       }
 
       .fee-header p {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
+      }
+
+      .estimator {
+        width: 100%;
+        min-width: 0;
+        gap: 18px;
       }
 
       .fields {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 14px;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .field {
+        width: 100%;
+        min-width: 0;
       }
 
       .full {
-        grid-column: auto;
+        grid-column: 1 / -1;
+        width: 100%;
+        min-width: 0;
       }
 
       .form-card,
       .result-card {
-        padding: 20px 16px;
+        padding: 18px 14px;
         border-radius: 14px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
       }
 
       .form-card h2 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
+        margin-bottom: 16px;
       }
 
-      /* Lesson Delivery Format — 2 cols on mobile */
+      /* Lesson Delivery Format — tight 2 cols */
       .lesson-options {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .lesson-option {
+        min-width: 0;
+        width: 100%;
       }
 
       .lesson-option label {
-        min-height: 78px;
-        font-size: 0.85rem;
-        padding: 12px 8px;
+        min-height: 72px !important;
+        font-size: 0.8rem !important;
+        padding: 10px 6px !important;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .lesson-option label span {
+        font-size: 0.8rem !important;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        display: block;
       }
 
       .lesson-option label i {
-        font-size: 1.25rem;
+        font-size: 1.15rem !important;
+        margin-bottom: 4px !important;
       }
 
-      /* Subject grid — prevent overflow */
-      .subject-grid {
-        grid-template-columns: 1fr;
+      .format-usd-badge {
+        top: 4px !important;
+        right: 4px !important;
+        font-size: 0.55rem !important;
+        padding: 1px 4px !important;
       }
 
+      /* Dynamic International Sessions Box */
+      #intlPlanField {
+        padding: 14px 12px !important;
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .intl-session-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .intl-session-btn {
+        padding: 10px 4px !important;
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      .intl-session-btn .session-badge {
+        font-size: 0.78rem !important;
+      }
+
+      .intl-session-btn .session-sub {
+        font-size: 0.68rem !important;
+      }
+
+      .intl-session-btn .session-price {
+        font-size: 0.92rem !important;
+      }
+
+      /* Subject Header & Filter */
       .subject-header-row {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch !important;
         gap: 8px;
+        width: 100%;
+      }
+
+      .subject-header-row > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 6px;
+      }
+
+      .subject-counter-badge {
+        font-size: 0.74rem;
+        padding: 4px 10px;
+        white-space: nowrap;
+      }
+
+      .deselect-btn {
+        font-size: 0.74rem;
+        padding: 4px 10px;
       }
 
       .subject-category-filter {
         gap: 6px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
       }
 
       .category-filter-btn {
-        font-size: 0.78rem;
-        padding: 6px 12px;
+        font-size: 0.76rem;
+        padding: 6px 10px;
+      }
+
+      /* Subject grid & cards */
+      .subject-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .subject-card {
+        padding: 10px 12px;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      .subject-card-left {
+        font-size: 0.84rem;
+        gap: 8px;
+        min-width: 0;
+        flex: 1;
+      }
+
+      .subject-card-check {
+        font-size: 1.05rem;
+        flex-shrink: 0;
       }
 
       /* Factors / what affects price */
@@ -1104,42 +1333,44 @@
         grid-template-columns: 1fr;
         gap: 12px;
         margin-top: 24px;
+        width: 100%;
       }
 
       .factor {
-        padding: 18px;
+        padding: 16px;
       }
 
       /* International plans grid — single col */
       .intl-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+        width: 100%;
       }
 
       .intl-card {
-        padding: 22px 18px;
+        padding: 20px 16px;
       }
 
       .intl-header h2 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
       }
 
       /* Flexible banner — stack on mobile */
       .intl-flexible-banner {
-        padding: 22px 18px;
-        gap: 18px;
+        padding: 20px 16px;
+        gap: 16px;
       }
 
       .flexible-banner-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: 14px;
+        gap: 12px;
       }
 
       .flexible-icon {
-        width: 46px;
-        height: 46px;
-        font-size: 1.3rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
       }
 
       .flexible-actions {
@@ -1154,11 +1385,23 @@
 
       /* Result card price */
       .price {
-        font-size: 2rem;
+        font-size: 1.55rem !important;
+        word-break: break-word;
+      }
+
+      .per-month {
+        font-size: 0.82rem;
       }
 
       .summary-row {
-        font-size: 0.86rem;
+        font-size: 0.84rem;
+        gap: 8px;
+      }
+
+      .cta {
+        padding: 14px;
+        font-size: 0.95rem;
+        margin-top: 18px;
       }
     }
 
@@ -1167,32 +1410,58 @@
        ============================================= */
     @media (max-width: 420px) {
       .fee-page {
-        padding: 20px 12px 40px;
+        padding: 18px 8px 36px;
       }
 
-      /* International session buttons — 2 cols */
-      .intl-session-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .lesson-options {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .intl-price {
-        font-size: 1.9rem;
-      }
-
-      .plan-name {
-        font-size: 1.25rem;
+      .form-card,
+      .result-card {
+        padding: 16px 10px;
+        border-radius: 12px;
       }
 
       .form-card h2 {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
       }
 
-      .subject-grid {
-        grid-template-columns: 1fr;
+      .lesson-option label {
+        min-height: 66px !important;
+        font-size: 0.74rem !important;
+        padding: 8px 4px !important;
+      }
+
+      .lesson-option label i {
+        font-size: 1.05rem !important;
+      }
+
+      .price {
+        font-size: 1.38rem !important;
+      }
+
+      .intl-price {
+        font-size: 1.7rem;
+      }
+
+      .plan-name {
+        font-size: 1.15rem;
+      }
+
+      .subject-card {
+        padding: 9px 10px;
+      }
+
+      .subject-card-left {
+        font-size: 0.8rem;
+        gap: 6px;
+      }
+
+      .subject-counter-badge {
+        font-size: 0.68rem;
+        padding: 3px 6px;
+      }
+
+      .deselect-btn {
+        font-size: 0.68rem;
+        padding: 3px 6px;
       }
     }
   </style>
