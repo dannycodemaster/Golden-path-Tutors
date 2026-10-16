@@ -983,13 +983,18 @@
       flex-shrink: 0;
     }
 
-    /* Responsive */
+    /* =============================================
+       Responsive — Tablet (≤1080px)
+       ============================================= */
     @media (max-width: 1080px) {
       .intl-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
+    /* =============================================
+       Responsive — Large Mobile / Small Tablet (≤860px)
+       ============================================= */
     @media (max-width: 860px) {
       .estimator {
         grid-template-columns: 1fr;
@@ -1023,38 +1028,175 @@
       }
     }
 
+    /* =============================================
+       Responsive — Mobile (≤600px)
+       ============================================= */
     @media (max-width: 600px) {
       .fee-page {
-        padding: 30px 15px 60px;
+        padding: 24px 14px 50px;
+      }
+
+      .fee-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .fee-header p {
+        font-size: 0.95rem;
       }
 
       .fields {
         grid-template-columns: 1fr;
+        gap: 14px;
       }
 
       .full {
         grid-column: auto;
       }
 
-      .factors {
+      .form-card,
+      .result-card {
+        padding: 20px 16px;
+        border-radius: 14px;
+      }
+
+      .form-card h2 {
+        font-size: 1.2rem;
+      }
+
+      /* Lesson Delivery Format — 2 cols on mobile */
+      .lesson-options {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .lesson-option label {
+        min-height: 78px;
+        font-size: 0.85rem;
+        padding: 12px 8px;
+      }
+
+      .lesson-option label i {
+        font-size: 1.25rem;
+      }
+
+      /* Subject grid — prevent overflow */
+      .subject-grid {
         grid-template-columns: 1fr;
       }
 
-      .form-card,
-      .result-card {
+      .subject-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .subject-category-filter {
+        gap: 6px;
+      }
+
+      .category-filter-btn {
+        font-size: 0.78rem;
+        padding: 6px 12px;
+      }
+
+      /* Factors / what affects price */
+      .factors {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .factor {
+        padding: 18px;
+      }
+
+      /* International plans grid — single col */
+      .intl-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .intl-card {
         padding: 22px 18px;
       }
 
-      .intl-grid {
-        grid-template-columns: 1fr;
+      .intl-header h2 {
+        font-size: 1.7rem;
+      }
+
+      /* Flexible banner — stack on mobile */
+      .intl-flexible-banner {
+        padding: 22px 18px;
+        gap: 18px;
       }
 
       .flexible-banner-content {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
+      }
+
+      .flexible-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 1.3rem;
+      }
+
+      .flexible-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .flexible-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Result card price */
+      .price {
+        font-size: 2rem;
+      }
+
+      .summary-row {
+        font-size: 0.86rem;
+      }
+    }
+
+    /* =============================================
+       Responsive — Small Mobile (≤420px)
+       ============================================= */
+    @media (max-width: 420px) {
+      .fee-page {
+        padding: 20px 12px 40px;
+      }
+
+      /* International session buttons — 2 cols */
+      .intl-session-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .lesson-options {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .intl-price {
+        font-size: 1.9rem;
+      }
+
+      .plan-name {
+        font-size: 1.25rem;
+      }
+
+      .form-card h2 {
+        font-size: 1.1rem;
+      }
+
+      .subject-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
+
 </head>
 
 <body>
